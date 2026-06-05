@@ -77,5 +77,35 @@ console.log(
 const tRes = await client.readResource({ uri: 'guestway://testimonials' });
 console.log('resource guestway://testimonials ->', JSON.parse(tRes.contents[0].text).total, 'quotes');
 
+const docs = await client.callTool({
+  name: 'search_docs',
+  arguments: { query: 'connect Mews PMS', limit: 3 },
+});
+const docsData = JSON.parse(docs.content[0].text);
+console.log(
+  'search_docs("connect Mews PMS") ->',
+  docsData.resultCount,
+  'of',
+  docsData.totalIndexed,
+  'indexed; top:',
+  docsData.results[0]?.title,
+);
+
+const nest = await client.callTool({
+  name: 'get_integration',
+  arguments: { slug: 'nest' },
+});
+const nestData = JSON.parse(nest.content[0].text);
+console.log('get_integration(nest) -> setupDocUrl:', nestData.setupDocUrl ?? 'none');
+
+if (nestData.setupDocUrl) {
+  const body = await client.callTool({
+    name: 'get_doc',
+    arguments: { url: nestData.setupDocUrl },
+  });
+  const bodyData = JSON.parse(body.content[0].text);
+  console.log('get_doc(nest setup) ->', bodyData.charCount, 'chars');
+}
+
 await client.close();
 console.log('\nOK: live MCP handshake + new-surface tool/resource calls succeeded.');

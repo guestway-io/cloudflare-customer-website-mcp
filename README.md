@@ -26,11 +26,13 @@ src/
   lib/respond.ts      tool result envelope + error guard
   tools/              search_faq, find_related_faqs, search_solutions,
                       get_solution, search_integrations, get_integration,
-                      get_company_info, route_question
+                      get_company_info, get_testimonials, search_docs,
+                      get_doc, route_question
+  lib/integration-docs.ts  maps marketing integration slugs -> Academy URLs
   resources/          guestway:// URIs (overview, catalog, faq, integrations,
-                      solutions, industries, pricing, legal, skills)
+                      solutions, industries, testimonials, pricing, legal, skills)
   prompts/            route-question
-  well-known/         capability descriptor
+  well-known/         capability descriptor + MCP Server Card
 tests/                vitest + in-memory MCP client, mocked fetch vs fixtures
 ```
 
@@ -134,25 +136,40 @@ dig +short SVCB _index._agents.guestway.io
 dig +dnssec _mcp._agents.guestway.io | grep -E 'flags:|ad'   # expect the 'ad' flag
 ```
 
-## Surface (V1)
+## Agent playbook (common pitfalls)
 
-9 tools, ~16 resource patterns (templates expand per item), 1 prompt. All
-read-only, no auth. See `/.well-known/mcp-capabilities.json` for the live
-inventory.
+| Symptom | Cause | Fix |
+|---|---|---|
+| Resource read fails for `nest` | Resources use `guestway://integrations/nest`, not a bare slug | Read the full URI or call `get_integration` |
+| `search_faq("connect Nest")` returns nothing | FAQs are pre-sales; setup lives in the Academy | `search_docs` → `get_doc`, or `get_integration` → `setupDocUrl` |
+| Agent guesses Academy URLs and 404s | Paths are not predictable (`nest` → `google-nest.md`) | Use `setupDocUrl` / `search_docs`, never invent paths |
+| Slow or empty off-MCP `?ask=` on GitBook | Optional GitBook query API; can time out | Use MCP `get_doc` on the `.md` URL instead |
+
+## Surface
+
+11 tools, ~16 resource patterns (templates expand per item), 1 prompt. All
+read-only, no auth. The server also sends `instructions` on connect (call-order
+guidance + read-only scope). See `/.well-known/mcp-capabilities.json` for the
+live inventory.
 
 Backed by these marketing-site feeds (single-sourced from content
-collections): `solutions` (now enriched with intro, stories, capabilities,
+collections): `solutions` (enriched with intro, stories, capabilities,
 related), `faq`, `integrations`, `industries`, `testimonials`, `legal`
 (full markdown for public Privacy/Terms; contract-only DPA/MSA as pointers),
-plus `llms.txt` and the agent-skills.
+plus `llms.txt`, the agent-skills, and the Academy index at
+`docs.guestway.io/llms.txt` (powers `search_docs` and `get_doc`; integration
+tools attach `setupDocUrl` when a matching Academy article exists).
 
-### Not in V1 (planned)
+There is a public `/mcp` landing page on guestway.io with copy-paste connect
+steps for Claude / Cursor / ChatGPT, linked from the footer next to the
+"Compare us in..." strip.
 
-- **V2**: `get_demo_availability` + `prepare_demo_booking` (HubSpot Scheduler
-  API read + pre-filled browser-handoff booking URL, no server-side write);
+### Not shipped (planned)
+
+- `get_demo_availability` + `prepare_demo_booking` (HubSpot Scheduler API read
+  + pre-filled browser-handoff booking URL, no server-side write);
   `assess-fit`, `objection-handle`, `compare-to-pms-stack` prompts.
-- **V3**: `search_academy` (docs.guestway.io), `get_recent_changes`
-  (changelog), `get_system_status` (status page).
+- `get_recent_changes` (changelog), `get_system_status` (status page).
 - `guestway://pricing` remains FAQ-backed by design (no machine-published
   price list; agents are routed to a demo for exact quotes).
 

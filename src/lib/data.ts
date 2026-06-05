@@ -24,6 +24,9 @@ const EDGE_TTL_SECONDS = 300;
 /** Guard against a hung origin holding an MCP tool call open. */
 const ORIGIN_TIMEOUT_MS = 5000;
 
+/** Academy pages can be slower than JSON feeds; allow a bit more headroom. */
+const DOCS_BODY_TIMEOUT_MS = 12_000;
+
 export class UpstreamError extends Error {
   constructor(
     public readonly url: string,
@@ -40,9 +43,12 @@ export class UpstreamError extends Error {
  * the marketing site's short `Cache-Control` doesn't force a miss on every
  * tool call.
  */
-async function cachedFetch(url: string): Promise<Response> {
+async function cachedFetch(
+  url: string,
+  timeoutMs = ORIGIN_TIMEOUT_MS,
+): Promise<Response> {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), ORIGIN_TIMEOUT_MS);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const res = await fetch(url, {
       signal: controller.signal,
@@ -121,4 +127,70 @@ export function getSkill(env: Env, slug: SkillSlug): Promise<string> {
   return fetchText(
     `${origin(env)}/.well-known/agent-skills/${slug}/SKILL.md`,
   );
+}
+
+export interface DocEntry {
+  title: string;
+  url: string;
+  description: string;
+}
+
+/**
+ * Parse the GitBook Academy `llms.txt`, a markdown list of
+ * `- [Title](https://docs.guestway.io/path.md): optional description` lines,
+ * into a flat doc index. Lines without a markdown link are skipped (headings,
+ * blanks). The `.md` URL is the clean-text twin an agent should fetch for the
+ * full article body.
+ */
+export async function getDocsIndex(env: Env): Promise<DocEntry[]> {
+  const docsOrigin = env.DOCS_URL.replace(/\/+$/, '');
+  const text = await fetchText(`${docsOrigin}/llms.txt`);
+  return parseDocsLlmsTxt(text);
+}
+
+/** Parse a GitBook `llms.txt` index into doc entries (shared by loader + tests). */
+export function parseDocsLlmsTxt(text: string): DocEntry[] {
+  const entries: DocEntry[] = [];
+  const line = /^- \[([^\]]+)\]\((https?:\/\/[^)]+)\)(?::\s*(.*))?$/;
+  for (const raw of text.split('\n')) {
+    const m = raw.match(line);
+    if (!m) continue;
+    entries.push({
+      title: m[1].trim(),
+      url: m[2].trim(),
+      description: (m[3] ?? '').trim(),
+    });
+  }
+  return entries;
+}
+
+/** Normalise a user-supplied Academy path or URL into a fetchable `.md` URL. */
+export function resolveDocUrl(env: Env, urlOrPath: string): string {
+  const docsOrigin = env.DOCS_URL.replace(/\/+$/, '');
+  const raw = urlOrPath.trim();
+  if (/^https?:\/\//i.test(raw)) {
+    const parsed = new URL(raw);
+    if (!parsed.href.startsWith(`${docsOrigin}/`)) {
+      throw new Error(
+        `Doc URL must be on ${docsOrigin} (got ${parsed.origin}).`,
+      );
+    }
+    if (!parsed.pathname.endsWith('.md')) {
+      parsed.pathname = parsed.pathname.replace(/\/?$/, '') + '.md';
+    }
+    return parsed.href;
+  }
+  const path = raw.replace(/^\/+/, '').replace(/\.md$/, '');
+  return `${docsOrigin}/${path}.md`;
+}
+
+/** Fetch one Academy article as markdown (clean-text `.md` twin). */
+export async function fetchDocMarkdown(
+  env: Env,
+  urlOrPath: string,
+): Promise<{ url: string; markdown: string }> {
+  const url = resolveDocUrl(env, urlOrPath);
+  const res = await cachedFetch(url, DOCS_BODY_TIMEOUT_MS);
+  const markdown = await res.text();
+  return { url, markdown };
 }

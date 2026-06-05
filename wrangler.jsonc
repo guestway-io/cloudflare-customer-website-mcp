@@ -32,7 +32,10 @@
     // Source of truth for all marketing data. The Worker fetches the
     // /data/*.json feeds + llms.txt from here at request time and caches
     // them at the edge, so a site deploy propagates without a Worker deploy.
-    "SITE_URL": "https://guestway.io"
+    "SITE_URL": "https://guestway.io",
+    // Customer Academy (GitBook). Its /llms.txt is a markdown index of every
+    // doc page; search_docs fetches and ranks it for how-to questions.
+    "DOCS_URL": "https://docs.guestway.io"
   },
   // Custom domain is attached in the Cloudflare dashboard (Workers > Domains)
   // or via `routes` once the zone is confirmed:

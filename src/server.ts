@@ -10,20 +10,43 @@ import { registerSolutionTools } from './tools/solutions';
 import { registerIntegrationTools } from './tools/integrations';
 import { registerCompanyTool } from './tools/company';
 import { registerTestimonialTool } from './tools/testimonials';
+import { registerDocsTool } from './tools/docs';
 import { registerRouteTool } from './tools/route';
 import { registerResources } from './resources/index';
 import { registerPrompts } from './prompts/index';
 
+/**
+ * Sent to clients in the initialize result. Steers a fresh agent toward the
+ * right call order before it has seen any tool, and sets the read-only,
+ * marketing-scope expectation so it does not try to mutate or fabricate.
+ */
+const SERVER_INSTRUCTIONS = `Guestway public MCP: read-only access to Guestway's marketing surface (product modules, FAQs, integrations, industries, testimonials, company info) plus public Academy how-to docs. Guestway is an AI-native operating system for property managers and hospitality teams that sits on top of the PMS.
+
+How to use:
+- Pre-sales / "does Guestway do X?": call search_faq first, then get_solution for module depth.
+- "Is <system> integrated?": ALWAYS call search_integrations or get_integration; never assert integration status from memory.
+- In-app setup ("how do I connect Nest / Mews / a lock"): get_integration (check setupDocUrl) or search_docs, then get_doc on the returned .md URL. Do not use search_faq for step-by-step setup; do not guess docs.guestway.io paths.
+- Resources use guestway:// URIs (e.g. guestway://integrations/nest), not bare slugs.
+- Pricing: there is no pricing tool by design; route the user to https://guestway.io/pricing or a demo. Never invent prices.
+- Status, careers, partnerships, or account-specific support: call route_question (status page, support email, etc.).
+- Company / apps / socials: get_company_info. Testimonials: get_testimonials (quote verbatim, do not paraphrase as a quote).
+
+All marketing data is sourced live from guestway.io; Academy articles from docs.guestway.io. Unauthenticated; no customer account data.`;
+
 export function createServer(env: Env): McpServer {
-  const server = new McpServer({
-    name: 'guestway-public-mcp',
-    version: '1.0.0',
-  });
+  const server = new McpServer(
+    {
+      name: 'guestway-public-mcp',
+      version: '1.0.0',
+    },
+    { instructions: SERVER_INSTRUCTIONS },
+  );
   registerFaqTools(server, env);
   registerSolutionTools(server, env);
   registerIntegrationTools(server, env);
   registerCompanyTool(server, env);
   registerTestimonialTool(server, env);
+  registerDocsTool(server, env);
   registerRouteTool(server, env);
   registerResources(server, env);
   registerPrompts(server, env);

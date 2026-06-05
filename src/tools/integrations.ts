@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { getIntegrationsFeed } from '../lib/data';
+import { getDocsIndex, getIntegrationsFeed } from '../lib/data';
+import { findIntegrationSetupDoc } from '../lib/integration-docs';
 import { rank } from '../lib/search';
 import { ok, fail, guard } from '../lib/respond';
 import type { Integration } from '../types/feeds';
@@ -11,6 +12,19 @@ function flatten(
   return feed.categories.flatMap((c) =>
     c.integrations.map((i) => ({ ...i, categoryLabel: c.label })),
   );
+}
+
+async function setupDocFields(
+  env: Env,
+  slug: string,
+  name: string,
+): Promise<{ setupDocUrl: string | null; setupDocTitle: string | null }> {
+  const docs = await getDocsIndex(env);
+  const doc = findIntegrationSetupDoc(slug, name, docs);
+  return {
+    setupDocUrl: doc?.url ?? null,
+    setupDocTitle: doc?.title ?? null,
+  };
 }
 
 export function registerIntegrationTools(server: McpServer, env: Env): void {
@@ -72,15 +86,18 @@ export function registerIntegrationTools(server: McpServer, env: Env): void {
             soon: feed.soonCount,
           },
           resultCount: items.length,
-          integrations: items.map((i) => ({
-            slug: i.slug,
-            name: i.name,
-            category: i.category,
-            categoryLabel: i.categoryLabel,
-            status: i.status,
-            variant: i.variant,
-            description: i.description,
-          })),
+          integrations: await Promise.all(
+            items.map(async (i) => ({
+              slug: i.slug,
+              name: i.name,
+              category: i.category,
+              categoryLabel: i.categoryLabel,
+              status: i.status,
+              variant: i.variant,
+              description: i.description,
+              ...(await setupDocFields(env, i.slug, i.name)),
+            })),
+          ),
         });
       }),
   );
@@ -91,8 +108,10 @@ export function registerIntegrationTools(server: McpServer, env: Env): void {
       title: 'Get one integration',
       description:
         'Fetch a single integration by its slug (e.g. "booking-com", ' +
-        '"mews", "salto"), returning its category, status and description. ' +
-        'Use search_integrations first if you do not know the exact slug.',
+        '"mews", "nest"), returning category, status, description, and ' +
+        'setupDocUrl when an Academy how-to exists. For setup steps call ' +
+        'get_doc(setupDocUrl). Use search_integrations first if you do not ' +
+        'know the exact slug.',
       inputSchema: {
         slug: z
           .string()
@@ -111,6 +130,7 @@ export function registerIntegrationTools(server: McpServer, env: Env): void {
               `find the correct slug (there are ${feed.total} systems).`,
           );
         }
+        const setup = await setupDocFields(env, found.slug, found.name);
         return ok({
           slug: found.slug,
           name: found.name,
@@ -120,6 +140,14 @@ export function registerIntegrationTools(server: McpServer, env: Env): void {
           variant: found.variant,
           description: found.description,
           source: feed.source,
+          ...setup,
+          ...(setup.setupDocUrl
+            ? {
+                setupNote:
+                  'Call get_doc with setupDocUrl for step-by-step connection ' +
+                  'instructions from the Academy.',
+              }
+            : {}),
         });
       }),
   );

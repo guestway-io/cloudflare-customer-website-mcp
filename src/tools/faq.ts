@@ -2,6 +2,7 @@ import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { getFaqFeed } from '../lib/data';
 import { rank } from '../lib/search';
+import { looksLikeProductSetup, SETUP_FAQ_MISS_HINT } from '../lib/setup-hint';
 import { ok, guard } from '../lib/respond';
 import type { FaqCategory } from '../types/feeds';
 
@@ -53,10 +54,11 @@ export function registerFaqTools(server: McpServer, env: Env): void {
       description:
         'Full-text search across every Guestway FAQ (about 80 Q&As in 14 ' +
         'categories: general, pricing, demo-and-onboarding, integrations, and ' +
-        'one per product module). Use this first for any "does Guestway do X", ' +
-        '"how does Y work", or pre-sales objection question. Returns the most ' +
-        'relevant question/answer pairs with their category. Do not answer ' +
-        'pre-sales questions from memory; cite these answers.',
+        'one per product module). Use this first for pre-sales questions: "does ' +
+        'Guestway do X", "how does Y work" (conceptually), pricing objections. ' +
+        'Do NOT use this for in-app setup ("how do I connect Nest"); use ' +
+        'search_docs + get_doc instead. Returns Q&A pairs with category. Do not ' +
+        'answer pre-sales questions from memory; cite these answers.',
       inputSchema: {
         query: z
           .string()
@@ -84,7 +86,7 @@ export function registerFaqTools(server: McpServer, env: Env): void {
             : feed.categories,
         );
         const hits = rank(pool, query, (f) => `${f.q} ${f.q} ${f.a}`, limit);
-        return ok({
+        const payload: Record<string, unknown> = {
           query,
           category: category ?? 'all',
           source: feed.source,
@@ -96,7 +98,12 @@ export function registerFaqTools(server: McpServer, env: Env): void {
             answer: h.item.a,
             relevance: Number(h.score.toFixed(3)),
           })),
-        });
+        };
+        if (hits.length === 0 && looksLikeProductSetup(query)) {
+          payload.hint = SETUP_FAQ_MISS_HINT;
+          payload.suggestedNextTools = ['search_docs', 'get_integration'];
+        }
+        return ok(payload);
       }),
   );
 

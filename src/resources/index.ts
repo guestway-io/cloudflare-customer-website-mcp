@@ -16,6 +16,7 @@ import type { ReadResourceResult } from '@modelcontextprotocol/sdk/types.js';
 import {
   getApiCatalog,
   getCatalogFeed,
+  getDocsIndex,
   getFaqFeed,
   getIndustriesFeed,
   getIntegrationsFeed,
@@ -26,6 +27,7 @@ import {
   getTestimonialsFeed,
   type SkillSlug,
 } from '../lib/data';
+import { findIntegrationSetupDoc } from '../lib/integration-docs';
 
 const SKILL_SLUGS: SkillSlug[] = [
   'guestway-overview',
@@ -165,7 +167,10 @@ export function registerResources(server: McpServer, env: Env): void {
     }),
     {
       title: 'Integration',
-      description: 'A single integration by slug, e.g. guestway://integrations/mews.',
+      description:
+        'A single integration by slug. URI must be guestway://integrations/{slug} ' +
+        '(e.g. guestway://integrations/nest), not a bare slug. Includes setupDocUrl ' +
+        'when an Academy how-to exists.',
       mimeType: 'application/json',
     },
     async (uri, { slug }) => {
@@ -173,7 +178,16 @@ export function registerResources(server: McpServer, env: Env): void {
       const found = feed.categories
         .flatMap((c) => c.integrations)
         .find((i) => i.slug === slug);
-      return jsonContents(uri.href, found ?? { error: `Unknown integration "${slug}"` });
+      if (!found) {
+        return jsonContents(uri.href, { error: `Unknown integration "${slug}"` });
+      }
+      const docs = await getDocsIndex(env);
+      const setupDoc = findIntegrationSetupDoc(found.slug, found.name, docs);
+      return jsonContents(uri.href, {
+        ...found,
+        setupDocUrl: setupDoc?.url ?? null,
+        setupDocTitle: setupDoc?.title ?? null,
+      });
     },
   );
 

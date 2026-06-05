@@ -1,0 +1,101 @@
+# Guestway Academy
+
+## Guestway Academy
+
+- [Getting Started](https://docs.guestway.io/getting-started.md): Everything you need to know to start supporting your guests with Guestway.
+- [Account Creation (Sign-up)](https://docs.guestway.io/onboarding/sign-up-registration.md)
+- [Linking Your PMS](https://docs.guestway.io/onboarding/property-management-systems.md): How to set up your first PMS integration
+- [Hostaway - Onboarding](https://docs.guestway.io/onboarding/property-management-systems/hostaway.md): Connect your Hostaway account to Guestway during initial sign-up.
+- [Guesty - Onboarding](https://docs.guestway.io/onboarding/property-management-systems/guesty.md): Connect your Guesty account to Guestway during initial sign-up.
+- [Smoobu - Onboarding](https://docs.guestway.io/onboarding/property-management-systems/smoobu.md): Connect your Smoobu account to Guestway during initial sign-up.
+- [Apaleo - Onboarding](https://docs.guestway.io/onboarding/property-management-systems/apaleo.md): Connect your Apaleo account to Guestway during initial sign-up.
+- [Mews - Onboarding](https://docs.guestway.io/onboarding/property-management-systems/smoobu-1.md): Connect your Mews account to Guestway during initial sign-up.
+- [Creating Organizations](https://docs.guestway.io/onboarding/creating-organizations.md): An Organization in Guestway is a workspace that groups your listings, teams, and operations together. Creating the right organization structure is the first step to keeping your inbox, cleaning tasks,
+- [Profile Settings](https://docs.guestway.io/settings/personal-settings.md)
+- [General](https://docs.guestway.io/settings/personal-settings/general.md): Your General profile settings control how Guestway displays personal information, handles your account security, and formats everyday data like time, temperature, and inbox language. Spending a minute
+- [Appearance](https://docs.guestway.io/settings/personal-settings/appearance.md): Switch between light and dark themes, and configure seasonal displays.
+- [Hubs](https://docs.guestway.io/settings/personal-settings/hubs.md): A Hub is a master workspace that rolls multiple Organizations into a single unified view — so you can oversee listings, reservations, and teams across your portfolio without switching organizations.
+- [Organization Settings](https://docs.guestway.io/settings/organization-settings.md)
+- [General](https://docs.guestway.io/settings/organization-settings/general.md): Edit organization name, URL, and data retention policies.
+- [Integrations](https://docs.guestway.io/settings/organization-settings/integrations.md)
+- [Automations](https://docs.guestway.io/settings/organization-settings/automations.md)
+- [Custom Fields](https://docs.guestway.io/settings/organization-settings/custom-fields.md): Define and manage custom field definitions for properties or reservations.
+- [Branding](https://docs.guestway.io/settings/organization-settings/branding.md): Configure logos, colors, and visual identity for guest-facing content.
+- [Guest Journey](https://docs.guestway.io/settings/organization-settings/guest-journey.md): Define pre-arrival, check-in, and post-stay guest experiences.
+- [Guest Inbox](https://docs.guestway.io/settings/organization-settings/guest-inbox.md)
+- [E-mail forwarding](https://docs.guestway.io/settings/organization-settings/guest-inbox/e-mail-forwarding.md): How to Set Up Email Forwarding to Guestway
+- [Email Domains](https://docs.guestway.io/settings/organization-settings/email-domains.md)
+- [Creating new domains](https://docs.guestway.io/settings/organization-settings/email-domains/creating-new-domains.md): How to Create & Link a Custom Email Domain to Guestway
+- [API Access](https://docs.guestway.io/settings/organization-settings/api-access.md)
+- [Chat Widget](https://docs.guestway.io/settings/organization-settings/chat-widget.md): Configure and embed a live chat widget on your website.
+- [Users](https://docs.guestway.io/settings/organization-settings/users.md): Invite team members and assign roles with specific permissions.
+- [Billing](https://docs.guestway.io/settings/organization-settings/billing.md): Connect and manage billing accounts for guest invoicing.
+- [Holding Settings](https://docs.guestway.io/settings/holding-settings.md): A Holding is the top-level structure in Guestway — the parent account that groups multiple organizations under one roof. Use Holding Settings to manage your portfolio, owners, shared hubs, users, and
+- [Property Management Systems](https://docs.guestway.io/integrations/property-management-systems.md): Set up additional PMS integrations by following the links below
+- [Hostaway](https://docs.guestway.io/integrations/property-management-systems/hostaway.md): Connect a Hostaway account to Guestway from inside the platform at any time.
+- [Guesty](https://docs.guestway.io/integrations/property-management-systems/guesty.md): Connect a Guesty account to Guestway from inside the platform at any time.
+- [Smoobu](https://docs.guestway.io/integrations/property-management-systems/smoobu.md): Connect a Smoobu account to Guestway from inside the platform at any time.
+- [Apaleo](https://docs.guestway.io/integrations/property-management-systems/apaleo.md): Connect an Apaleo account to Guestway from inside the platform at any time.
+- [Mews](https://docs.guestway.io/integrations/property-management-systems/smoobu-1.md): Connect a Mews account to Guestway from inside the platform at any time.
+- [Smart Locks](https://docs.guestway.io/integrations/smart-locks.md)
+- [Nuki](https://docs.guestway.io/integrations/smart-locks/nuki.md)
+- [Salto](https://docs.guestway.io/integrations/smart-locks/salto.md)
+- [Yale](https://docs.guestway.io/integrations/smart-locks/yale.md)
+- [ProDatakey](https://docs.guestway.io/integrations/smart-locks/prodatakey.md)
+- [Smart Thermostats](https://docs.guestway.io/integrations/smart-thermostats.md)
+- [Google Nest](https://docs.guestway.io/integrations/smart-thermostats/google-nest.md)
+- [Honeywell](https://docs.guestway.io/integrations/smart-thermostats/honeywell.md)
+- [Zennio](https://docs.guestway.io/integrations/smart-thermostats/zennio.md)
+- [Online Travel Agencies (OTA)](https://docs.guestway.io/integrations/online-travel-agencies-ota.md)
+- [Airbnb](https://docs.guestway.io/integrations/online-travel-agencies-ota/airbnb.md)
+- [Booking.com](https://docs.guestway.io/integrations/online-travel-agencies-ota/booking.com.md)
+- [Expedia](https://docs.guestway.io/integrations/online-travel-agencies-ota/expedia.md)
+- [SMS](https://docs.guestway.io/integrations/sms.md)
+- [Twilio (For SMS)](https://docs.guestway.io/integrations/sms/twilio-for-sms.md): How to set up your integration with Twilio
+- [Sinch MessageMedia (For SMS)](https://docs.guestway.io/integrations/sms/sinch-messagemedia-for-sms.md)
+- [Whatsapp](https://docs.guestway.io/integrations/whatsapp.md): This section explains how to connect and use WhatsApp inside Guestway.
+- [Meta setup & Guestway integration](https://docs.guestway.io/integrations/whatsapp/meta-setup-and-guestway-integration.md)
+- [Connect your existing WhatsApp Business App](https://docs.guestway.io/integrations/whatsapp/connect-your-existing-whatsapp-business-app.md): (Coexistence)
+- [Using Whatsapp in Guestway](https://docs.guestway.io/integrations/whatsapp/using-whatsapp-in-guestway.md): In this article we explain how WhatsApp messaging works inside Guestway and how to initiate conversations using templates.
+- [META](https://docs.guestway.io/integrations/meta.md): Connect Instagram and Messenger to your inbox
+- [Multi-Calendar](https://docs.guestway.io/guestway-platform/multi-calendar.md): The Multi-Calendar gives you a single, visual overview of every listing, reservation, and cleaning status across your portfolio. Instead of switching between properties one by one, you see everything
+- [Unified AI inbox](https://docs.guestway.io/guestway-platform/unified-ai-inbox.md)
+- [Guest Portal](https://docs.guestway.io/guestway-platform/guest-portal.md): The Guest Portal is a personalised web app generated for every reservation. It gives guests every piece of information they need for their stay in one branded link — cutting down repetitive questions
+- [Reservation Panel](https://docs.guestway.io/guestway-platform/reservation-panel.md): The Reservation Panel is your single source of truth for every reservation across your portfolio: past, present, and future. Use it to look up bookings, prepare for arrivals and departures, and keep
+- [Review Center](https://docs.guestway.io/guestway-platform/review-center.md)
+- [Properties](https://docs.guestway.io/guestway-platform/properties.md)
+- [General (Listings Details)](https://docs.guestway.io/guestway-platform/properties/general-listings-details.md)
+- [Guidebooks](https://docs.guestway.io/guestway-platform/properties/guidebooks.md)
+- [Saved Replies](https://docs.guestway.io/guestway-platform/properties/saved-replies.md)
+- [Checklists](https://docs.guestway.io/guestway-platform/properties/checklists.md)
+- [Custom Fields](https://docs.guestway.io/guestway-platform/properties/custom-fields.md)
+- [Service Templates](https://docs.guestway.io/guestway-platform/service-templates.md)
+- [Cleaning](https://docs.guestway.io/guestway-platform/cleaning.md)
+- [Thermostats](https://docs.guestway.io/guestway-platform/thermostats.md)
+- [Smart Locks](https://docs.guestway.io/guestway-platform/smart-locks.md)
+- [Static Locks](https://docs.guestway.io/guestway-platform/static-locks.md)
+- [Getting started](https://docs.guestway.io/guestway-mobile-app/getting-started.md)
+- [Cleaning Tasks](https://docs.guestway.io/guestway-mobile-app/cleaning.md)
+- [Weekly overview](https://docs.guestway.io/guestway-mobile-app/cleaning/weekly-overview.md)
+- [Managing cleaning tasks](https://docs.guestway.io/guestway-mobile-app/cleaning/managing-cleaning-tasks.md)
+- [Completing a task](https://docs.guestway.io/guestway-mobile-app/cleaning/completing-a-task.md)
+- [Inbox](https://docs.guestway.io/guestway-mobile-app/inbox.md)
+- [Settings](https://docs.guestway.io/guestway-mobile-app/settings.md)
+
+
+---
+
+# Agent Instructions: Querying This Documentation
+
+If you need additional information, you can query the documentation dynamically by asking a question.
+
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+
+```
+GET https://docs.guestway.io/getting-started.md?ask=<question>
+```
+
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

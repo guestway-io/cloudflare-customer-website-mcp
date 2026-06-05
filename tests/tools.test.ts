@@ -6,7 +6,7 @@ describe('tools', () => {
   beforeEach(() => mockFetch());
   afterEach(() => vi.unstubAllGlobals());
 
-  it('lists exactly the 9 tools', async () => {
+  it('lists exactly the 11 tools', async () => {
     const { client, close } = await connectClient();
     const { tools } = await client.listTools();
     const names = tools.map((t) => t.name).sort();
@@ -14,15 +14,100 @@ describe('tools', () => {
       [
         'find_related_faqs',
         'get_company_info',
+        'get_doc',
         'get_integration',
         'get_solution',
         'get_testimonials',
         'route_question',
+        'search_docs',
         'search_faq',
         'search_integrations',
         'search_solutions',
       ].sort(),
     );
+    await close();
+  });
+
+  it('search_docs finds Nest thermostat setup (slug alias google-nest)', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'search_docs',
+      arguments: { query: 'connect Nest thermostat', limit: 5 },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.resultCount).toBeGreaterThan(0);
+    const nest = data.results.find((r: { url: string }) =>
+      r.url.includes('google-nest'),
+    );
+    expect(nest).toBeTruthy();
+    await close();
+  });
+
+  it('get_integration attaches setupDocUrl for nest', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'get_integration',
+      arguments: { slug: 'nest' },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.slug).toBe('nest');
+    expect(data.setupDocUrl).toMatch(/google-nest\.md$/);
+    expect(data.setupDocTitle).toMatch(/Google Nest/i);
+    await close();
+  });
+
+  it('get_doc returns Academy markdown for nest setup path', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'get_doc',
+      arguments: {
+        url: 'integrations/smart-thermostats/google-nest',
+      },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.url).toMatch(/google-nest\.md$/);
+    expect(data.markdown).toMatch(/Organization Settings/i);
+    await close();
+  });
+
+  it('search_faq hints search_docs when setup query has no FAQ hit', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'search_faq',
+      arguments: { query: 'connect Nest thermostat', category: 'integrations' },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.resultCount).toBe(0);
+    expect(data.hint).toMatch(/search_docs/);
+    await close();
+  });
+
+  it('search_docs ranks Academy articles from the docs index', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'search_docs',
+      arguments: { query: 'connect Mews PMS' },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.totalIndexed).toBeGreaterThan(20);
+    expect(data.resultCount).toBeGreaterThan(0);
+    // A relevant hit should be a real docs.guestway.io .md URL.
+    expect(data.results[0].url).toMatch(/docs\.guestway\.io.*\.md$/);
+    const anyMews = data.results.some((r: any) =>
+      `${r.title} ${r.description}`.toLowerCase().includes('mews'),
+    );
+    expect(anyMews).toBe(true);
+    await close();
+  });
+
+  it('advertises server instructions (call-order guidance) on connect', async () => {
+    const { client, close } = await connectClient();
+    const instructions = client.getInstructions();
+    expect(instructions).toBeTruthy();
+    expect(instructions).toMatch(/search_integrations/);
+    expect(instructions).toMatch(/get_doc/);
+    expect(instructions).toMatch(/guestway:\/\//);
+    expect(instructions).toMatch(/read-only/i);
     await close();
   });
 

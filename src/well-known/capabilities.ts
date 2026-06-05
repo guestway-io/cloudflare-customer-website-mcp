@@ -33,6 +33,8 @@ export function buildCapabilities(origin: string) {
       'get_integration',
       'get_company_info',
       'get_testimonials',
+      'search_docs',
+      'get_doc',
       'route_question',
     ],
     resources: [
