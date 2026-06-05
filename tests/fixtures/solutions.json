@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-06-05T12:59:07.106Z",
+  "source": "https://guestway.io/",
+  "total": 9,
+  "solutions": [
+    {
+      "slug": "ai-inbox",
+      "title": "AI Inbox",
+      "category": "guest-journey",
+      "url": "https://guestway.io/solutions/ai-inbox",
+      "menu": {
+        "label": "AI Inbox",
+        "description": "One inbox, every channel. Auto-replies in 30 languages.",
+        "order": 1
+      },
+      "seo": {
+        "title": "AI Inbox · Guestway",
+        "description": "Centralize Airbnb, Booking.com, WhatsApp, SMS and email in one inbox. AI-suggested replies in 30+ languages, sentiment scoring, and full operational context per conversation."
+      }
+    },
+    {
+      "slug": "review-center",
+      "title": "Review Center",
+      "category": "guest-journey",
+      "url": "https://guestway.io/solutions/review-center",
+      "menu": {
+        "label": "Review Center",
+        "description": "Centralize reviews. AI-drafted replies. Lift ratings on autopilot.",
+        "order": 2
+      },
+      "seo": {
+        "title": "Review Center · Guestway",
+        "description": "One dashboard for every review. AI-drafted replies, sentiment analysis, and unit-level performance tracking, turn guest feedback into operational wins."
+      }
+    },
+    {
+      "slug": "guest-app",
+      "title": "Guest App",
+      "category": "guest-journey",
+      "url": "https://guestway.io/solutions/guest-app",
+      "menu": {
+        "label": "Guest App",
+        "description": "Branded PWA. Self check-in. Upsells. Zero downloads.",
+        "order": 3
+      },
+      "seo": {
+        "title": "White-label guest app for hotels & short-term rentals · Guestway",
+        "description": "White-label guest app and PWA: self check-in, smart-lock codes, upsells, and a digital guidebook. No downloads required."
+      }
+    },
+    {
+      "slug": "automations",
+      "title": "Automations",
+      "category": "guest-journey",
+      "url": "https://guestway.io/solutions/automations",
+      "menu": {
+        "label": "Automations",
+        "description": "Event-driven workflows. Messages and ops, on autopilot.",
+        "order": 4
+      },
+      "seo": {
+        "title": "Automations · Guestway",
+        "description": "Automate guest communication and operational workflows triggered by real reservation events. Cut repetitive work, never miss a follow-up, and keep every stay smooth."
+      }
+    },
+    {
+      "slug": "multi-calendar",
+      "title": "Multi-calendar",
+      "category": "smart-operations",
+      "url": "https://guestway.io/solutions/multi-calendar",
+      "menu": {
+        "label": "Multi-calendar",
+        "description": "Conflict-free booking view across every property.",
+        "order": 5
+      },
+      "seo": {
+        "title": "Multi-calendar · Guestway",
+        "description": "Every booking, every channel, every property, in one conflict-free view. Real-time sync from your PMS and OTAs, drag-to-reassign, instant filters."
+      }
+    },
+    {
+      "slug": "cleaning-management",
+      "title": "Cleaning Management",
+      "category": "smart-operations",
+      "url": "https://guestway.io/solutions/cleaning-management",
+      "menu": {
+        "label": "Cleaning Management",
+        "description": "Auto-scheduled, photo-verified, real-time. No spreadsheets.",
+        "order": 6
+      },
+      "seo": {
+        "title": "Cleaning Management · Guestway",
+        "description": "Auto-schedule cleanings from reservations, assign the right teams, track photo proof, and close the loop with supervisors, all in real time."
+      }
+    },
+    {
+      "slug": "access-management",
+      "title": "Access Management",
+      "category": "smart-operations",
+      "url": "https://guestway.io/solutions/access-management",
+      "menu": {
+        "label": "Access Management",
+        "description": "Keys, codes, audit log. Every event signed and time-stamped.",
+        "order": 7
+      },
+      "seo": {
+        "title": "Access Management · Guestway",
+        "description": "One unified code per reservation across every smart lock brand. Auto-issued, dynamically updated, fully audited, with manual override always one click away."
+      }
+    },
+    {
+      "slug": "climate-control",
+      "title": "Climate Control",
+      "category": "smart-operations",
+      "url": "https://guestway.io/solutions/climate-control",
+      "menu": {
+        "label": "Climate Control",
+        "description": "Thermostats tuned to occupancy. Cuts utilities up to 30%.",
+        "order": 8
+      },
+      "seo": {
+        "title": "Climate Control · Guestway",
+        "description": "Intelligent climate control, automated by reservations, optimized for energy. Comfortable guests. Lower bills. No manual thermostat work."
+      }
+    },
+    {
+      "slug": "ai-operations-center",
+      "title": "AI Operations Center",
+      "category": "smart-operations",
+      "url": "https://guestway.io/solutions/ai-operations-center",
+      "menu": {
+        "label": "AI Operations Center",
+        "description": "Detects, prevents, and resolves issues before guests notice.",
+        "order": 9
+      },
+      "seo": {
+        "title": "AI Operations Center · Guestway",
+        "description": "Proactive control tower for hospitality ops. Guestway parses messages, reviews, and system data to surface issues, auto-create tasks, and notify the right team before guests escalate."
+      }
+    }
+  ]
+}

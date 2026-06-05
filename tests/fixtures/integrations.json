@@ -1,0 +1,514 @@
+{
+  "generatedAt": "2026-06-05T12:59:07.105Z",
+  "source": "https://guestway.io/integrations",
+  "total": 57,
+  "liveCount": 25,
+  "earlyCount": 21,
+  "soonCount": 11,
+  "categories": [
+    {
+      "id": "pms",
+      "label": "Property Management Systems",
+      "short": "PMS",
+      "order": 1,
+      "blurb": "Two-way sync with the PMS you already trust. Reservations, guest profiles, rates and availability, kept consistent in real time, no CSVs, no duplicate data entry.",
+      "integrations": [
+        {
+          "slug": "guesty",
+          "name": "Guesty",
+          "category": "pms",
+          "status": "live",
+          "description": "All-in-one property management platform trusted by leading hotels, vacation rentals and management companies in 150+ countries.",
+          "order": 1
+        },
+        {
+          "slug": "smoobu",
+          "name": "Smoobu",
+          "category": "pms",
+          "status": "live",
+          "description": "Powerful channel manager and booking system designed specifically for vacation rental hosts and property managers.",
+          "order": 2
+        },
+        {
+          "slug": "apaleo",
+          "name": "Apaleo",
+          "category": "pms",
+          "status": "live",
+          "description": "API-centric PMS built for forward-thinking hotels, open architecture, lean operations, modern guest experiences.",
+          "order": 3
+        },
+        {
+          "slug": "hostaway",
+          "name": "Hostaway",
+          "category": "pms",
+          "status": "live",
+          "description": "Complete vacation-rental management software with channel manager, automation and team collaboration tooling.",
+          "order": 4
+        },
+        {
+          "slug": "mews",
+          "name": "Mews",
+          "category": "pms",
+          "status": "live",
+          "description": "Cloud-native hotel property management system designed for modern hotels and hospitality groups.",
+          "order": 5
+        },
+        {
+          "slug": "oracle",
+          "name": "Oracle",
+          "category": "pms",
+          "status": "live",
+          "description": "Enterprise hospitality management suite for large hotels, chains and multi-property operations.",
+          "order": 9
+        },
+        {
+          "slug": "hostfully",
+          "name": "Hostfully",
+          "category": "pms",
+          "status": "live",
+          "description": "Property management with digital guidebooks, direct booking tools and operational workflows.",
+          "order": 11
+        },
+        {
+          "slug": "hotelkey",
+          "name": "Hotelkey",
+          "category": "pms",
+          "status": "early",
+          "description": "Comprehensive hotel PMS with integrated channel manager, booking engine and revenue management.",
+          "order": 7
+        },
+        {
+          "slug": "smily",
+          "name": "Smily",
+          "category": "pms",
+          "status": "early",
+          "description": "European property management platform specialising in vacation rental automation and multi-channel distribution.",
+          "order": 8
+        },
+        {
+          "slug": "beds24",
+          "name": "Beds24",
+          "category": "pms",
+          "status": "early",
+          "description": "Cloud-based property management and channel manager for vacation rentals, hostels and guest houses.",
+          "order": 10
+        },
+        {
+          "slug": "hostify",
+          "name": "Hostify",
+          "category": "pms",
+          "status": "soon",
+          "description": "All-in-one PMS and channel manager that automates processes across multiple vacation rental platforms.",
+          "order": 12
+        },
+        {
+          "slug": "hospitable",
+          "name": "Hospitable",
+          "category": "pms",
+          "status": "soon",
+          "description": "Streamlined property management with automated messaging, calendar sync and team coordination features.",
+          "order": 13
+        },
+        {
+          "slug": "lodgify",
+          "name": "Lodgify",
+          "category": "pms",
+          "status": "soon",
+          "description": "Vacation-rental software with website builder, booking engine and integrated channel management.",
+          "order": 14
+        },
+        {
+          "slug": "avantio",
+          "name": "Avantio",
+          "category": "pms",
+          "status": "soon",
+          "description": "Enterprise vacation-rental platform offering advanced automation, CRM and revenue management.",
+          "order": 15
+        },
+        {
+          "slug": "cloudbeds",
+          "name": "Cloudbeds",
+          "category": "pms",
+          "status": "soon",
+          "description": "Unified hospitality platform combining PMS, channel manager, booking engine and revenue management.",
+          "order": 16
+        },
+        {
+          "slug": "ownerrez",
+          "name": "OwnerRez",
+          "category": "pms",
+          "status": "soon",
+          "description": "Powerful vacation-rental management with accounting, channel distribution and guest communication.",
+          "order": 17
+        },
+        {
+          "slug": "mr-alfred",
+          "name": "Mr. Alfred",
+          "category": "pms",
+          "status": "soon",
+          "description": "Property management and guest experience platform for serviced apartments and aparthotels.",
+          "order": 18
+        },
+        {
+          "slug": "roomraccoon",
+          "name": "RoomRaccoon",
+          "category": "pms",
+          "status": "soon",
+          "description": "All-in-one hotel management system designed for independent hotels and small chains.",
+          "order": 19
+        },
+        {
+          "slug": "clock-pms-plus",
+          "name": "Clock PMS Plus",
+          "category": "pms",
+          "status": "soon",
+          "description": "Flexible cloud property-management system for hotels, hostels and vacation-rental properties.",
+          "order": 20
+        }
+      ]
+    },
+    {
+      "id": "ota",
+      "label": "OTAs · Channels",
+      "short": "OTA",
+      "order": 2,
+      "blurb": "Centralise inbound bookings from the channels that send you guests. Messaging stays in one inbox, calendars stay synced, no duplicate work.",
+      "integrations": [
+        {
+          "slug": "airbnb",
+          "name": "Airbnb",
+          "category": "ota",
+          "status": "live",
+          "variant": "API",
+          "description": "Connect to the world's leading vacation-rental marketplace with seamless booking sync and automated messaging.",
+          "order": 1
+        },
+        {
+          "slug": "booking-com",
+          "name": "Booking.com",
+          "category": "ota",
+          "status": "live",
+          "variant": "Email/PMS",
+          "description": "Sync your Booking.com reservations automatically and manage guest communication directly from Guestway.",
+          "order": 2
+        },
+        {
+          "slug": "expedia",
+          "name": "Expedia",
+          "category": "ota",
+          "status": "live",
+          "variant": "Email/PMS",
+          "description": "Integrate Expedia Group channels including Hotels.com and Vrbo for centralised reservation management.",
+          "order": 3
+        },
+        {
+          "slug": "agoda",
+          "name": "Agoda",
+          "category": "ota",
+          "status": "early",
+          "description": "Distribute to Agoda's Asia-Pacific traveller base with synced availability and centralised reservation management.",
+          "order": 6
+        },
+        {
+          "slug": "vrbo",
+          "name": "VRBO",
+          "category": "ota",
+          "status": "soon",
+          "description": "Connect VRBO listings with automatic calendar sync and streamlined guest-communication workflows.",
+          "order": 4
+        },
+        {
+          "slug": "trip-com",
+          "name": "Trip.com",
+          "category": "ota",
+          "status": "soon",
+          "description": "Reach Asian markets with Trip.com integration for global distribution and centralised booking management.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "communication",
+      "label": "Guest messaging · Channels",
+      "short": "Messaging",
+      "order": 3,
+      "blurb": "Bring WhatsApp, SMS, social DMs and email into one AI-powered inbox. Every guest thread in one place, with reservation context on every reply.",
+      "integrations": [
+        {
+          "slug": "whatsapp",
+          "name": "WhatsApp",
+          "category": "communication",
+          "status": "live",
+          "description": "Route guest WhatsApp threads into the unified inbox. AI-assisted replies with full reservation context on every message.",
+          "order": 1
+        },
+        {
+          "slug": "messenger",
+          "name": "Messenger",
+          "category": "communication",
+          "status": "live",
+          "description": "Facebook Messenger conversations from listings and pages, synced to the same inbox as OTA and email threads.",
+          "order": 2
+        },
+        {
+          "slug": "instagram",
+          "name": "Instagram",
+          "category": "communication",
+          "status": "live",
+          "description": "Instagram DMs from hospitality accounts, managed alongside every other guest channel in one workspace.",
+          "order": 3
+        },
+        {
+          "slug": "twilio",
+          "name": "Twilio",
+          "category": "communication",
+          "status": "live",
+          "description": "Send and receive guest SMS through Twilio. Texts land in the same inbox as WhatsApp, OTA messages and email.",
+          "order": 4
+        },
+        {
+          "slug": "sinch",
+          "name": "Sinch",
+          "category": "communication",
+          "status": "live",
+          "description": "SMS and rich mobile messaging through Sinch. Reach guests on the channels they already use for travel updates.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "label": "Smart Climate",
+      "short": "Climate",
+      "order": 4,
+      "blurb": "Connect smart thermostats so HVAC follows your reservation calendar. Pre-cool before check-in, drop temps when units are vacant, save up to 30% on utility bills.",
+      "integrations": [
+        {
+          "slug": "nest",
+          "name": "Nest",
+          "category": "climate",
+          "status": "live",
+          "description": "Google Nest smart thermostats with AI-powered learning, remote control and energy-saving automation.",
+          "order": 1
+        },
+        {
+          "slug": "honeywell",
+          "name": "Honeywell",
+          "category": "climate",
+          "status": "live",
+          "description": "Industry-leading thermostats offering precise temperature control, scheduling and energy-efficiency monitoring.",
+          "order": 2
+        },
+        {
+          "slug": "tado",
+          "name": "Tado",
+          "category": "climate",
+          "status": "live",
+          "description": "European smart climate control with geofencing, multi-zone management and intelligent heating optimisation.",
+          "order": 3
+        },
+        {
+          "slug": "zennio",
+          "name": "Zennio",
+          "category": "climate",
+          "status": "live",
+          "description": "KNX climate and HVAC automation for hotels and aparthotels. Heating and cooling follow occupancy and your reservation calendar.",
+          "order": 6
+        },
+        {
+          "slug": "ecobee",
+          "name": "Ecobee",
+          "category": "climate",
+          "status": "early",
+          "description": "Smart thermostats with room sensors, voice control and advanced energy-saving features for optimal comfort.",
+          "order": 4
+        },
+        {
+          "slug": "sensi",
+          "name": "Sensi",
+          "category": "climate",
+          "status": "early",
+          "description": "Affordable smart thermostats with easy installation, mobile control and flexible scheduling options.",
+          "order": 5
+        }
+      ]
+    },
+    {
+      "id": "locks",
+      "label": "Smart Locks · Access",
+      "short": "Locks",
+      "order": 5,
+      "blurb": "Issue, rotate and revoke door codes per reservation. Works across smart locks, key boxes and enterprise access systems, no truck-rolls, no lost keys.",
+      "integrations": [
+        {
+          "slug": "nuki",
+          "name": "Nuki",
+          "category": "locks",
+          "status": "live",
+          "description": "European smart-lock leader with keyless entry, remote access and seamless integration for short-term rentals.",
+          "order": 1
+        },
+        {
+          "slug": "salto",
+          "name": "Salto",
+          "category": "locks",
+          "status": "live",
+          "description": "Enterprise access-control trusted by hotels worldwide for secure, scalable keyless entry.",
+          "order": 2
+        },
+        {
+          "slug": "yale",
+          "name": "Yale",
+          "category": "locks",
+          "status": "live",
+          "description": "Trusted smart locks combining proven security hardware with modern digital access and remote management.",
+          "order": 3
+        },
+        {
+          "slug": "akiles",
+          "name": "Akiles",
+          "category": "locks",
+          "status": "live",
+          "description": "Cloud-based access control with mobile credentials and real-time monitoring for residential properties.",
+          "order": 4
+        },
+        {
+          "slug": "brivo",
+          "name": "Brivo",
+          "category": "locks",
+          "status": "live",
+          "description": "Cloud-based access-control platform for multi-property management with mobile credentials and real-time monitoring.",
+          "order": 5
+        },
+        {
+          "slug": "prodatakey",
+          "name": "Prodatakey",
+          "category": "locks",
+          "status": "live",
+          "description": "Scalable cloud access control with mobile credentials and advanced security features for modern properties.",
+          "order": 6
+        },
+        {
+          "slug": "schlage",
+          "name": "Schlage",
+          "category": "locks",
+          "status": "early",
+          "description": "Reliable smart locks with built-in alarm technology and seamless integration for vacation-rental access.",
+          "order": 7
+        },
+        {
+          "slug": "kwikset",
+          "name": "Kwikset",
+          "category": "locks",
+          "status": "early",
+          "description": "Trusted residential smart locks with keypad entry, app control and dependable security for rentals.",
+          "order": 8
+        },
+        {
+          "slug": "august",
+          "name": "August",
+          "category": "locks",
+          "status": "early",
+          "description": "Smart-lock retrofits that add keyless entry to existing deadbolts with remote access and activity monitoring.",
+          "order": 9
+        },
+        {
+          "slug": "ttlock",
+          "name": "TTLock",
+          "category": "locks",
+          "status": "early",
+          "description": "Affordable smart-lock solutions with Bluetooth and Wi-Fi connectivity for flexible property access.",
+          "order": 10
+        },
+        {
+          "slug": "33-lock",
+          "name": "33 Lock",
+          "category": "locks",
+          "status": "early",
+          "description": "Professional smart-access designed specifically for vacation rentals and property management companies.",
+          "order": 11
+        },
+        {
+          "slug": "4suites",
+          "name": "4SUITES",
+          "category": "locks",
+          "status": "early",
+          "description": "Smart-lock and access-control platform built for hospitality and multi-property operations.",
+          "order": 12
+        },
+        {
+          "slug": "assa-abloy",
+          "name": "Assa Abloy",
+          "category": "locks",
+          "status": "early",
+          "description": "Global leader in access solutions providing enterprise-grade smart locks and security systems.",
+          "order": 13
+        },
+        {
+          "slug": "dormakaba",
+          "name": "Dormakaba",
+          "category": "locks",
+          "status": "early",
+          "description": "Swiss engineering excellence in access control with premium smart locks for hotels and commercial properties.",
+          "order": 14
+        },
+        {
+          "slug": "igloohome",
+          "name": "igloohome",
+          "category": "locks",
+          "status": "early",
+          "description": "Offline smart locks with PIN codes and Bluetooth access, perfect for Airbnb and vacation-rental hosts.",
+          "order": 15
+        },
+        {
+          "slug": "lockly",
+          "name": "Lockly",
+          "category": "locks",
+          "status": "early",
+          "description": "Patented PIN Genie technology with biometric fingerprint reader and advanced encryption for maximum security.",
+          "order": 16
+        },
+        {
+          "slug": "tedee",
+          "name": "Tedee",
+          "category": "locks",
+          "status": "early",
+          "description": "European smart lock with auto-unlock, bridge connectivity and clean integrations to major smart-home platforms.",
+          "order": 17
+        },
+        {
+          "slug": "keynest",
+          "name": "KeyNest",
+          "category": "locks",
+          "status": "early",
+          "description": "Secure key-storage network with 24/7 access points in local shops for flexible key exchange.",
+          "order": 18
+        },
+        {
+          "slug": "latch",
+          "name": "Latch",
+          "category": "locks",
+          "status": "early",
+          "description": "Smart-access system designed for apartment buildings with mobile, keycard and PIN entry options.",
+          "order": 19
+        },
+        {
+          "slug": "wyze",
+          "name": "Wyze",
+          "category": "locks",
+          "status": "early",
+          "description": "Budget-friendly smart lock with auto-unlock, guest access codes and smartphone control.",
+          "order": 20
+        },
+        {
+          "slug": "alfred",
+          "name": "Alfred",
+          "category": "locks",
+          "status": "early",
+          "description": "Smart-lock platform with camera integration, video verification and comprehensive access management.",
+          "order": 21
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "$comment": "RFC 9727 API catalog. Source of truth for human-curated entries is public/llms.txt; the build-time JSON feeds under /data/* are projections of the same content collections that drive the marketing pages. Update in lockstep when adding a major surface.",
+  "linkset": [
+    {
+      "anchor": "https://guestway.io/",
+      "service-doc": [
+        { "href": "https://guestway.io/llms.txt", "type": "text/plain" },
+        { "href": "https://guestway.io/faq", "type": "text/html" },
+        { "href": "https://guestway.io/pricing", "type": "text/html" },
+        { "href": "https://guestway.io/book-a-demo", "type": "text/html" },
+        { "href": "https://guestway.io/integrations", "type": "text/html" },
+        { "href": "https://guestway.io/industries", "type": "text/html" },
+        { "href": "https://guestway.io/referral-program", "type": "text/html" },
+        { "href": "https://guestway.io/careers", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/ai-inbox", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/review-center", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/guest-app", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/automations", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/multi-calendar", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/cleaning-management", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/access-management", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/climate-control", "type": "text/html" },
+        { "href": "https://guestway.io/solutions/ai-operations-center", "type": "text/html" }
+      ],
+      "service-desc": [
+        { "href": "https://guestway.io/data/catalog.json", "type": "application/json" },
+        { "href": "https://guestway.io/data/faq.json", "type": "application/json" },
+        { "href": "https://guestway.io/data/integrations.json", "type": "application/json" },
+        { "href": "https://guestway.io/data/solutions.json", "type": "application/json" },
+        { "href": "https://guestway.io/data/industries.json", "type": "application/json" }
+      ],
+      "describedby": [
+        { "href": "https://guestway.io/sitemap-index.xml", "type": "application/xml" }
+      ]
+    },
+    {
+      "anchor": "https://docs.guestway.io/",
+      "service-doc": [
+        { "href": "https://docs.guestway.io/", "type": "text/html" },
+        { "href": "https://docs.guestway.io/llms.txt", "type": "text/markdown" },
+        {
+          "href": "https://docs.guestway.io/settings/organization-settings/api-access.md",
+          "type": "text/markdown"
+        }
+      ],
+      "describedby": [
+        { "href": "https://docs.guestway.io/sitemap.xml", "type": "application/xml" }
+      ]
+    },
+    {
+      "anchor": "https://status.guestway.io/",
+      "service-doc": [
+        { "href": "https://status.guestway.io/", "type": "text/html" }
+      ]
+    },
+    {
+      "anchor": "https://guestway-knowledge-base.help.usepylon.com/",
+      "service-doc": [
+        {
+          "href": "https://guestway-knowledge-base.help.usepylon.com/articles/3167002633-changelog",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

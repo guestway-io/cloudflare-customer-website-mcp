@@ -1,0 +1,480 @@
+{
+  "generatedAt": "2026-06-05T12:59:07.103Z",
+  "source": "https://guestway.io/faq",
+  "totalCategories": 14,
+  "totalQuestions": 80,
+  "categories": [
+    {
+      "slug": "general",
+      "title": "About Guestway",
+      "short": "General",
+      "order": 1,
+      "showOn": [],
+      "items": [
+        {
+          "q": "What exactly is Guestway?",
+          "a": "An all-in-one B2B SaaS platform that unifies AI-powered operations, guest communications and IoT device control in a single dashboard, so property managers can replace half a dozen point solutions with one workspace."
+        },
+        {
+          "q": "How does Guestway make my team more efficient (and more profitable)?",
+          "a": "Operators using Guestway report up to 20 hours saved per week on staff scheduling and channel hopping, 50% fewer phone calls, 70% of guest messages handled automatically, and 95% contact-free check-ins. On top of those cost savings, Guestway helps you grow revenue through upsells like early check-in, late check-out and mid-stay cleaning, plus optional damage waivers that cover guests when accidents happen."
+        },
+        {
+          "q": "Does Guestway integrate with my current tech stack?",
+          "a": "Yes. Live today across leading PMS platforms (Mews, Apaleo, Guesty, Hostaway, Hostfully, Smoobu, Oracle), the major OTAs (Airbnb, Booking.com, Expedia), guest messaging (WhatsApp, Messenger, Instagram, Twilio, Sinch), plus the smart-lock and climate brands you're already using. More PMS partners (Cloudbeds, Lodgify, Hospitable, Hostify, OwnerRez, Beds24 and more) are on the roadmap. The full catalogue with per-integration status is at https://guestway.io/integrations."
+        },
+        {
+          "q": "How does Guestway lift the guest experience?",
+          "a": "A branded Guest App handles self check-in, smart-lock codes, room control and two-way messaging, all AI-assisted. Combined with the Review Center and automation engine, the lift in ratings is direct and measurable."
+        },
+        {
+          "q": "Is the platform only in English, or is German supported too?",
+          "a": "The Guestway dashboard is in English today. Guest messaging, AI drafts and translations cover 30+ languages, so you and your guests each read and write in your own. Our support team can help you in German as well as English, both during onboarding and day-to-day."
+        }
+      ]
+    },
+    {
+      "slug": "pricing",
+      "title": "Pricing",
+      "short": "Pricing",
+      "order": 2,
+      "showOn": [
+        "pricing"
+      ],
+      "items": [
+        {
+          "q": "I'm only managing 10 to 20 units. Am I too small for Guestway?",
+          "a": "No. Guestway runs on portfolios from a handful of units up to several hundred. The pricing scales the same way the workload does. We'll be honest if it's overkill for your stage, but most operators see the AI inbox earn its keep before unit 20."
+        },
+        {
+          "q": "What happens if I sign up after the demo?",
+          "a": "45-minute guided onboarding, no contract lock-in, no setup fee through the referral program. Most teams are routing live guest messages through the AI inbox the same week."
+        },
+        {
+          "q": "Which integrations are included in my Guestway subscription?",
+          "a": "Your PMS integration is included at no extra cost. Smart-device integrations (locks, thermostats) are priced per device as outlined in your quote."
+        },
+        {
+          "q": "How long does integration setup take?",
+          "a": "Most integrations activate within minutes once you provide API credentials. Our support team guides you through the process; complex multi-property setups typically complete within one business day."
+        },
+        {
+          "q": "Do I need to switch my PMS?",
+          "a": "No. Guestway sits on top of your existing PMS through native integrations, Mews, Cloudbeds, Lodgify, Avantio, Hospitable, Hostfully, Hostify, OwnerRez, Beds24, and more. We don't ask anyone to rip-and-replace."
+        },
+        {
+          "q": "How is hotel pricing calculated?",
+          "a": "Every hotel gets a tailored quote based on room count, PMS stack, and how you run the front desk. There are no public per-room tiers on the site; contact sales or book a demo and we will scope pricing for your property, boutique or multi-site."
+        }
+      ]
+    },
+    {
+      "slug": "demo-and-onboarding",
+      "title": "Demo & onboarding",
+      "short": "Demo",
+      "order": 3,
+      "showOn": [
+        "book-a-demo"
+      ],
+      "items": [
+        {
+          "q": "I'm only managing 10 to 20 units. Am I too small for Guestway?",
+          "a": "No. Guestway runs on portfolios from a handful of units up to several hundred. The pricing scales the same way the workload does. We'll be honest if it's overkill for your stage, but most operators see the AI inbox earn its keep before unit 20."
+        },
+        {
+          "q": "Do I need to switch my PMS?",
+          "a": "No. Guestway sits on top of your existing PMS through native integrations, Mews, Cloudbeds, Lodgify, Avantio, Hospitable, Hostfully, Hostify, OwnerRez, Beds24 and more. We don't ask anyone to rip-and-replace."
+        },
+        {
+          "q": "How long is the demo?",
+          "a": "45 minutes is enough for a focused walkthrough plus Q&A. If you have a stakeholder who needs more time on a specific module, access management, AI inbox, automations, we book a follow-up rather than dragging the first call past the hour."
+        },
+        {
+          "q": "Who runs the demo?",
+          "a": "A human from our team, not a sales bot, not a recorded screencast. They'll know the platform end-to-end and can pull up your real PMS data live if you want to test against your own bookings."
+        },
+        {
+          "q": "What happens if I sign up after the demo?",
+          "a": "45-minute guided onboarding, no contract lock-in, no setup fee through the referral program. Most teams are routing live guest messages through the AI inbox the same week."
+        },
+        {
+          "q": "I prefer email, can we just talk that way?",
+          "a": "Of course. Drop a line to sales@guestway.io and we'll match a slot to your timezone, or answer your questions in writing first if that's faster for you."
+        }
+      ]
+    },
+    {
+      "slug": "integrations",
+      "title": "Integrations",
+      "short": "Integrations",
+      "order": 4,
+      "showOn": [
+        "integrations"
+      ],
+      "items": [
+        {
+          "q": "Which integrations are included in my Guestway subscription?",
+          "a": "Your PMS integration is included at no extra cost. Smart-device integrations (locks, thermostats) are priced per device as outlined in your quote."
+        },
+        {
+          "q": "What if my preferred system is not listed here?",
+          "a": "We are constantly adding new integrations. If your platform is not shown, email info@guestway.io, we can often build custom integrations within 2 to 4 weeks."
+        },
+        {
+          "q": "How long does integration setup take?",
+          "a": "Most integrations activate within minutes once you provide API credentials. Our support team guides you through the process; complex multi-property setups typically complete within one business day."
+        },
+        {
+          "q": "Can I switch PMS providers without losing my Guestway setup?",
+          "a": "Yes. Guestway sits on top of your PMS, so switching providers is seamless. We help migrate your data and reconnect the new PMS with minimal downtime."
+        },
+        {
+          "q": "Do you support custom or in-house systems?",
+          "a": "If your stack exposes a REST or GraphQL API, we can build a custom adapter. Reach out, most custom integrations ship in 2 to 4 weeks for a one-off fee."
+        },
+        {
+          "q": "How does Guestway work alongside Smoobu without duplicating its automations?",
+          "a": "Smoobu stays your channel manager and booking source. Guestway connects over the API and adds the ops layer Smoobu is not built for: a unified guest inbox across Airbnb, Booking.com, WhatsApp, SMS and email, AI-assisted replies in 30+ languages, cleaning dispatch, smart-access codes, and cross-module automations tied to each reservation. You keep Smoobu for distribution and core PMS workflows; Guestway handles guest comms and back-of-house execution in one place."
+        },
+        {
+          "q": "We forward guest mail through our own email address. Does the unified inbox still work for replies?",
+          "a": "Yes. If you already receive guest email through a forwarded or custom address, those threads can still land in Guestway's AI Inbox alongside Airbnb, Booking.com, WhatsApp and SMS. Your team replies from one workspace instead of splitting between your PMS inbox and a personal mailbox. The exact setup depends on your mail routing; we walk through it during onboarding."
+        }
+      ]
+    },
+    {
+      "slug": "ai-inbox",
+      "title": "AI Inbox",
+      "short": "AI Inbox",
+      "order": 5,
+      "showOn": [
+        "solutions/ai-inbox"
+      ],
+      "items": [
+        {
+          "q": "What is the Unified AI Inbox?",
+          "a": "A centralized messaging hub that brings together communication from Airbnb, Booking.com, WhatsApp, SMS, and email. Powered by AI, it delivers instant context, smart insights, and reply suggestions to help you respond faster and work more efficiently."
+        },
+        {
+          "q": "How does the AI help in guest communication?",
+          "a": "The AI suggests responses, auto-replies to FAQs (like Wi-Fi or check-in time), and translates messages in real time, so you're always fast, consistent, and accurate."
+        },
+        {
+          "q": "Can we still personalize messages with the AI?",
+          "a": "Yes. You can edit, approve, or turn off AI suggestions. You can also save your own replies or use ones synced directly from your PMS."
+        },
+        {
+          "q": "Can multiple team members use the inbox at the same time?",
+          "a": "Absolutely. The Inbox supports team collaboration, staff can see conversations, assign tasks, and reply without overlap, keeping everything organized and efficient."
+        },
+        {
+          "q": "Will using the Unified Inbox improve our guest reviews?",
+          "a": "Yes. Faster, clearer, more consistent replies mean happier guests. Resolving questions instantly and avoiding miscommunication creates a smoother experience, which directly leads to higher ratings and better reviews."
+        },
+        {
+          "q": "We use our own website for check-in instructions, not the Guest App. Can we send those links from the inbox?",
+          "a": "Yes. The Guest App is optional. You can send messages from the AI Inbox or trigger them through Automations with links to your own check-in or instruction pages, per listing or per booking. Guests still get one thread per stay, and your team sees their replies in the same place, beside the reservation context."
+        },
+        {
+          "q": "If I read and write in my own language, does Guestway send the reply in the guest's language?",
+          "a": "Yes. The inbox translates inbound messages into your working language and translates your reply back into the guest's language before send. You stay in control: review, edit or turn off the AI suggestion per message. Same 30+ language coverage as the rest of the platform."
+        }
+      ]
+    },
+    {
+      "slug": "review-center",
+      "title": "Review Center",
+      "short": "Reviews",
+      "order": 6,
+      "showOn": [
+        "solutions/review-center"
+      ],
+      "items": [
+        {
+          "q": "What does the Review Center do?",
+          "a": "It pulls all your reviews into one place across platforms, tracks performance, detects patterns, and auto-suggests responses with AI."
+        },
+        {
+          "q": "Can the system reply automatically?",
+          "a": "Yes. You can manually approve or fully automate replies based on sentiment, property, or language."
+        },
+        {
+          "q": "Does it help operations too?",
+          "a": "Yes. Negative patterns (cleaning, check-in, noise) are flagged so you can fix root causes, not just reply politely."
+        },
+        {
+          "q": "Can we filter by rating?",
+          "a": "Yes. Filter by score, channel, listing, or sentiment so you focus on what's actually moving."
+        },
+        {
+          "q": "Are reviews linked to bookings?",
+          "a": "Yes. Each review is linked to its reservation, so you instantly see the guest, property, and stay context."
+        }
+      ]
+    },
+    {
+      "slug": "guest-app",
+      "title": "Guest App",
+      "short": "Guest App",
+      "order": 7,
+      "showOn": [
+        "solutions/guest-app"
+      ],
+      "items": [
+        {
+          "q": "Do guests need to download anything?",
+          "a": "No. Each guest gets a personalized, mobile-friendly web app link with everything they need."
+        },
+        {
+          "q": "What can guests do in the Guest App?",
+          "a": "Everything: check-in, smart-lock codes, upsells, guidebooks, Wi-Fi, check-out, fully branded to your company."
+        },
+        {
+          "q": "Can I customize content?",
+          "a": "Yes. You control what each guest sees. Add links, PDFs, upsells, local tips, check-in videos, per listing or per organization."
+        },
+        {
+          "q": "Can guests access the app before their stay?",
+          "a": "Yes. Guests get the link well ahead of check-in to review instructions and prepare."
+        },
+        {
+          "q": "Is it branded to our company?",
+          "a": "Fully white-labelled. Guests see your brand, not ours."
+        },
+        {
+          "q": "Do we have to use the full Guest App, or can we keep our own guest portal?",
+          "a": "Three setups work. Run the full white-labelled Guest App (codes, upsells, chat, guidebook in one branded link). Or run only Guestway's pre-check-in step (ID checks, guest info, compliance) and auto-redirect guests to your own portal afterwards. Or skip the guest-facing layer entirely and use Guestway for AI Inbox, automations and ops, while your own pre-check-in and portal run the guest journey end-to-end."
+        },
+        {
+          "q": "Will Feratel tourist tax and the digital Gästekarte be automated?",
+          "a": "Feratel and similar local-registration flows are on our roadmap. They will plug into the guest journey through the upcoming Settle Balance step, so guests can pay tourist tax and related charges before check-in. Not live yet, ask sales@guestway.io if you need Austria-specific registration on your timeline."
+        }
+      ]
+    },
+    {
+      "slug": "automations",
+      "title": "Automations",
+      "short": "Automations",
+      "order": 8,
+      "showOn": [
+        "solutions/automations"
+      ],
+      "items": [
+        {
+          "q": "Does automation reduce staff workload?",
+          "a": "Yes. Routine communication, confirmations, reminders, review requests, runs itself. Your team focuses on the conversations that need a human."
+        },
+        {
+          "q": "What types of automations can we set up?",
+          "a": "Anything event-driven: messaging flows, check-in/out triggers, service requests, no-show handling, custom workflows. End-to-end across the guest journey."
+        },
+        {
+          "q": "What if a guest replies to an automated message?",
+          "a": "Replies go straight to your AI Inbox. Automation handles the routine; your team handles the rest."
+        },
+        {
+          "q": "Can we customize automations?",
+          "a": "Yes. Message content, timing, channel, and entire event-based workflows are tunable to your voice and ops."
+        },
+        {
+          "q": "Do automations actually improve guest satisfaction?",
+          "a": "Yes. Timely, consistent communication reduces confusion and resolves issues faster, directly lifting reviews."
+        }
+      ]
+    },
+    {
+      "slug": "ai-operations-center",
+      "title": "AI Operations Center",
+      "short": "AI Ops",
+      "order": 9,
+      "showOn": [
+        "solutions/ai-operations-center"
+      ],
+      "items": [
+        {
+          "q": "What is the AI Operations Center?",
+          "a": "Your proactive control tower. It detects maintenance issues, creates tasks automatically, and keeps teams in sync, before problems become complaints."
+        },
+        {
+          "q": "What kind of problems does it detect?",
+          "a": "Dirty units, lock issues, recurring complaints, check-in failures, missing service items, flagged using AI from guest communication and system data."
+        },
+        {
+          "q": "Can I customize how tasks are created?",
+          "a": "Yes. Build tailored workflows: rules by property type, regional supervisor assignment, instant notifications for high-priority issues."
+        },
+        {
+          "q": "Does it notify the right team automatically?",
+          "a": "Yes. Once an issue is flagged, it's assigned to the right person or team based on your workflows and they're notified instantly."
+        },
+        {
+          "q": "Can I track progress?",
+          "a": "Yes. Every task is tracked from creation to resolution, with updates, internal notes, and status changes visible in real time."
+        }
+      ]
+    },
+    {
+      "slug": "access-management",
+      "title": "Access Management",
+      "short": "Access",
+      "order": 10,
+      "showOn": [
+        "solutions/access-management"
+      ],
+      "items": [
+        {
+          "q": "Which devices do you integrate with?",
+          "a": "Native integrations with Nuki, Salto, Brivo, Prodatakey and more. New devices ship in days to weeks. See the full list under Smart Locks on the Integrations page, or ask us to add yours."
+        },
+        {
+          "q": "Can I monitor devices in real time?",
+          "a": "Yes. Battery levels, online/offline status, and full access logs from the dashboard. Re-send or disable codes on demand."
+        },
+        {
+          "q": "How does access management work?",
+          "a": "Guestway integrates with smart locks to generate secure, time-bound codes per reservation. Guests automatically receive their code through their preferred channel (Airbnb, WhatsApp, SMS, email)."
+        },
+        {
+          "q": "Can I still use physical keys?",
+          "a": "Yes. Use static codes or maintain backup key boxes for emergencies, alongside smart codes."
+        },
+        {
+          "q": "Do guests need to download an app?",
+          "a": "No. Guests just need their unique code. They can also see it in the Guest App via the link we send them."
+        },
+        {
+          "q": "We use Nuki without a keypad. Can guests unlock without downloading the Nuki app?",
+          "a": "Yes. Guestway integrates with Nuki and exposes an Open door button in the guest journey, delivered through the Guest App link or an automated message. Guests tap to unlock remotely during their stay window without installing the Nuki app, so you are not limited to keypad codes. Lock model and Nuki setup still matter, we confirm compatibility during onboarding."
+        }
+      ]
+    },
+    {
+      "slug": "climate-control",
+      "title": "Climate Control",
+      "short": "Climate",
+      "order": 11,
+      "showOn": [
+        "solutions/climate-control"
+      ],
+      "items": [
+        {
+          "q": "What is automated climate control?",
+          "a": "An intelligent system that automates temperature settings to keep guests comfortable and save energy. It learns occupancy patterns and optimizes climate automatically."
+        },
+        {
+          "q": "How does it save on energy bills?",
+          "a": "Energy Efficiency Mode and Climate Optimization adjust temperature based on occupancy, preventing waste in empty units and maintaining ideal conditions without manual work."
+        },
+        {
+          "q": "Can it integrate with existing thermostats?",
+          "a": "Yes. Rapid integrations with major HVAC and thermostat systems. Connect what you have, control it centrally."
+        },
+        {
+          "q": "Can settings adjust between guest stays?",
+          "a": "Yes. The system lowers energy use when a unit is empty and restores ideal temperature just before the next check-in."
+        },
+        {
+          "q": "Do guests have control?",
+          "a": "Yes, within limits you define. Comfortable guests, controlled costs."
+        }
+      ]
+    },
+    {
+      "slug": "cleaning-management",
+      "title": "Cleaning Management",
+      "short": "Cleaning",
+      "order": 12,
+      "showOn": [
+        "solutions/cleaning-management"
+      ],
+      "items": [
+        {
+          "q": "How does Guestway handle cleaning scheduling?",
+          "a": "We automate scheduling from reservations, route tasks to the right teams, track progress, and collect feedback, all in one place."
+        },
+        {
+          "q": "What's included in a cleaning task?",
+          "a": "Checklists, priority level, special requests (baby beds, late check-out), smart-lock access, and before/after photo upload."
+        },
+        {
+          "q": "Is there a cleaner app?",
+          "a": "Yes. Cleaners get their own mobile interface, assigned tasks, photo upload, damage flags, completion, without ever touching the main PMS."
+        },
+        {
+          "q": "Is the Cleaning App on iOS and Android?",
+          "a": "Yes. Both stores. Available on any device your team uses."
+        },
+        {
+          "q": "Can managers track progress in real time?",
+          "a": "Yes. Every task updates instantly, managers always see what's in progress, complete, or flagged for follow-up."
+        },
+        {
+          "q": "Can each turnover be assigned to a different cleaning team?",
+          "a": "Yes. You create teams once with their own supervisors, members and linked listings. Each property maps to one primary team, with backup teams pre-defined for emergencies. Turnovers auto-schedule from reservations and route to the right crew, and supervisors can filter the queue by team, property or score without spreadsheet handoffs."
+        }
+      ]
+    },
+    {
+      "slug": "multi-calendar",
+      "title": "Multi-calendar",
+      "short": "Calendar",
+      "order": 13,
+      "showOn": [
+        "solutions/multi-calendar"
+      ],
+      "items": [
+        {
+          "q": "What is the Multi-calendar?",
+          "a": "A single unified view that pulls every reservation from every connected listing into one organized calendar. One place to manage everything."
+        },
+        {
+          "q": "How does it prevent double bookings?",
+          "a": "By consolidating every property's calendar into one view, conflicts surface immediately. You spot and avoid clashes before they happen."
+        },
+        {
+          "q": "What are the main benefits?",
+          "a": "Centralized reservations, faster planning, less app-switching. Your team stays organized without spreadsheets."
+        },
+        {
+          "q": "Can I filter by property or channel?",
+          "a": "Yes. Filter by listing, nickname, city or ZIP, see only what's relevant to you."
+        },
+        {
+          "q": "Does it update in real time?",
+          "a": "Yes. Any new booking, cancellation, or change from your PMS or OTAs appears instantly."
+        }
+      ]
+    },
+    {
+      "slug": "referral-program",
+      "title": "Referral Program",
+      "short": "Referrals",
+      "order": 14,
+      "showOn": [
+        "referral-program"
+      ],
+      "items": [
+        {
+          "q": "When do I get paid after a referral signs?",
+          "a": "A referral counts as successful once the referred company has signed with Guestway and paid its first invoice. We validate the referral at that point, then include your reward in the next monthly payout run. Sales cycles vary, so the calendar time between your submission and payout depends on how quickly the company evaluates, signs, and pays."
+        },
+        {
+          "q": "How long does my referral stay valid?",
+          "a": "Submit the referral before the company becomes a paying Guestway customer. The referred company must be new to Guestway: not an existing customer, not already in an active sales conversation with us, and not a self-referral. One reward per referred company. If we determine a referral is not a fit, we may decline it even after submission; we will tell you when that happens."
+        },
+        {
+          "q": "Are referral rewards taxable? What do I need for payout?",
+          "a": "Referral rewards are cash payments and are generally treated as taxable income in your country. You are responsible for reporting them to your tax authority and for any income tax or social contributions that apply. If you refer as a business, we may ask for a company name, billing address, and VAT number so we can process the payment correctly. Guestway does not provide tax advice; check with your accountant if you are unsure how rewards affect you."
+        },
+        {
+          "q": "When do milestone bonuses get paid?",
+          "a": "Milestone bonuses (€500 at 5 successful referrals, €1,000 at 10) are cumulative and paid on top of the per-referral reward for each company. They are calculated from validated referrals only, the same ones that cleared the first-invoice rule. Milestone amounts are included in the monthly payout run once you cross the threshold, not at submission time."
+        },
+        {
+          "q": "What payment details do you need from me?",
+          "a": "When a referral is close to validation, we contact you for payout details: legal name, email, bank account (IBAN for SEPA transfers), and, for business referrers, invoicing details including VAT where applicable. Rewards are paid in euros. Keep your contact details in the referral form accurate so we can reach you without delay."
+        }
+      ]
+    }
+  ]
+}

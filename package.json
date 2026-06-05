@@ -1,0 +1,29 @@
+{
+  "name": "guestway-public-mcp",
+  "version": "1.0.0",
+  "description": "Public MCP server exposing Guestway's marketing surface (solutions, FAQs, integrations, industries, company info) to AI agents.",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "smoke": "node scripts/smoke.mjs",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.23.0",
+    "agents": "^0.2.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "typescript": "^5.5.3",
+    "vitest": "~3.0.0",
+    "wrangler": "^4.0.0"
+  }
+}

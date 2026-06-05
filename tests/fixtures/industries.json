@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-06-05T12:59:07.104Z",
+  "source": "https://guestway.io/industries",
+  "total": 4,
+  "industries": [
+    {
+      "slug": "property-managers",
+      "label": "Property managers",
+      "short": "Property managers",
+      "eyebrow": "For property managers",
+      "title": "One operating system for",
+      "sub": "From 10 units to 1,000, Guestway gives multi-property managers a single command center for guest comms, cleaning, access, and revenue. Stop stitching tools together. Start operating like one team.",
+      "url": "https://guestway.io/industries#property-managers",
+      "order": 1,
+      "bullets": [
+        {
+          "title": "Multi-property at a glance",
+          "body": "One inbox, one calendar, one cleaning queue across every building you manage, filter by portfolio, owner, or city in a click."
+        },
+        {
+          "title": "Owner-grade reporting",
+          "body": "Per-unit P&L, occupancy, and review scores ready for owner statements without spreadsheet duct-tape."
+        },
+        {
+          "title": "PMS-agnostic",
+          "body": "Works with Mews, Avantio, Hostfully, Hostify, Lodgify, OwnerRez, Beds24, and more. Connect multiple PMS systems at once, built for mixed portfolios and for groups still on separate stacks after a merger or acquisition."
+        },
+        {
+          "title": "Built for scale",
+          "body": "Role-based access, sub-accounts per portfolio, and audit logs that survive the next compliance review."
+        }
+      ]
+    },
+    {
+      "slug": "aparthotels",
+      "label": "Aparthotels",
+      "short": "Aparthotels",
+      "eyebrow": "For aparthotels",
+      "title": "Hotel-grade service,",
+      "sub": "Aparthotels live in the gap between hotels and short-term rentals. Guestway is built for that gap, the same OS handles 30-night corporate stays, weekend leisure bookings, and everything in between, without forcing you to pick a side.",
+      "url": "https://guestway.io/industries#aparthotels",
+      "order": 2,
+      "bullets": [
+        {
+          "title": "Hybrid stays, one workflow",
+          "body": "Long-stay corporate guests, weekenders, and direct bookings all flow through the same inbox, calendar, and cleaning queue."
+        },
+        {
+          "title": "Self-service that actually works",
+          "body": "Branded guest app handles check-in, ID upload, access codes, and upsells, so reception isn't a bottleneck at 11pm."
+        },
+        {
+          "title": "Cleaning at scale",
+          "body": "Mid-stay cleans, turnovers, and deep-cleans scheduled automatically from booking events. Linen counts and supplies tracked per unit."
+        },
+        {
+          "title": "Revenue without the rev-manager",
+          "body": "Pricing signals from your PMS surface in one place, so weekend uplifts and corporate-rate negotiations don't need a spreadsheet."
+        }
+      ]
+    },
+    {
+      "slug": "hotels",
+      "label": "Hotels",
+      "short": "Hotels",
+      "eyebrow": "For hotels",
+      "title": "Lift service scores",
+      "sub": "Independent hotels and small chains use Guestway to give the front desk superpowers, AI-drafted replies in 30+ languages, every guest's full context one click away, and ops automations that catch problems before reception even hears about them.",
+      "url": "https://guestway.io/industries#hotels",
+      "order": 3,
+      "bullets": [
+        {
+          "title": "Faster, multilingual replies",
+          "body": "AI drafts answers in the guest's language and your brand voice, receptionists approve and send in seconds."
+        },
+        {
+          "title": "Reviews that lift, not haunt",
+          "body": "Centralize TripAdvisor, Booking.com, Google, and Expedia reviews. AI-drafted responses, sentiment trends, unit-level performance."
+        },
+        {
+          "title": "Ops that prevent escalations",
+          "body": "AI Operations Center spots noise complaints, slow responses, and broken kit before they hit the GM's inbox."
+        },
+        {
+          "title": "Plays nice with your PMS",
+          "body": "Native integrations with Apaleo, Mews, Cloudbeds, and friends, Guestway adds the AI layer without forcing a re-platform."
+        }
+      ]
+    },
+    {
+      "slug": "str",
+      "label": "STR",
+      "short": "STR",
+      "eyebrow": "For short-term rentals",
+      "title": "Run more units",
+      "sub": "Short-term rental hosts and management companies use Guestway to compress the operational load of every booking, AI replies before the guest finishes typing, cleaning auto-scheduled the moment a check-out happens, access codes issued without a single manual click.",
+      "url": "https://guestway.io/industries#str",
+      "order": 4,
+      "bullets": [
+        {
+          "title": "AI that handles the 80%",
+          "body": "Repetitive guest questions (\"can we check in early?\", \"is there parking?\") answered in seconds, in the guest's language."
+        },
+        {
+          "title": "Cleaning on autopilot",
+          "body": "Turnovers triggered by check-out events, dispatched to your cleaning crew, with photo-confirmation and inventory checks built in."
+        },
+        {
+          "title": "Access without keys",
+          "body": "Smart-lock codes generated per booking, valid only for the stay, revoked automatically. Akiles, Nuki, and friends supported natively."
+        },
+        {
+          "title": "One inbox for every channel",
+          "body": "Airbnb, Booking.com, Vrbo, WhatsApp, SMS, and email all in one thread per guest, never miss a message because it landed in the wrong app."
+        }
+      ]
+    }
+  ]
+}

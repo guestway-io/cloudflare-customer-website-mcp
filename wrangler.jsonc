@@ -1,0 +1,43 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "guestway-public-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-05-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  // McpAgent persists each MCP session in a Durable Object. SQLite-backed
+  // classes are required for the agents framework's session store.
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MCP_OBJECT",
+        "class_name": "GuestwayMCP"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["GuestwayMCP"]
+    }
+  ],
+  "vars": {
+    // Source of truth for all marketing data. The Worker fetches the
+    // /data/*.json feeds + llms.txt from here at request time and caches
+    // them at the edge, so a site deploy propagates without a Worker deploy.
+    "SITE_URL": "https://guestway.io"
+  },
+  // The `agents` package has an optional `import("ai")` for its AI-chat
+  // features, which this MCP server does not use. Alias it to a local shim so
+  // the bundler resolves it without pulling in the full Vercel AI SDK.
+  "alias": {
+    "ai": "./src/shims/ai.ts"
+  },
+  // Custom domain is attached in the Cloudflare dashboard (Workers > Domains)
+  // or via `routes` once the zone is confirmed:
+  // "routes": [
+  //   { "pattern": "public-mcp.guestway.io", "custom_domain": true }
+  // ]
+}

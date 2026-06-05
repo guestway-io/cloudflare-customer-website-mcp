@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-06-05T12:59:07.102Z",
+  "site": "https://guestway.io",
+  "feeds": [
+    {
+      "name": "faq",
+      "url": "https://guestway.io/data/faq.json",
+      "description": "Every Q&A surfaced on the marketing site, grouped by category."
+    },
+    {
+      "name": "integrations",
+      "url": "https://guestway.io/data/integrations.json",
+      "description": "Every integration with status (live, early access, coming soon), category and one-line description."
+    },
+    {
+      "name": "solutions",
+      "url": "https://guestway.io/data/solutions.json",
+      "description": "The 9 product modules with title, category, menu metadata, SEO meta and canonical URL."
+    },
+    {
+      "name": "industries",
+      "url": "https://guestway.io/data/industries.json",
+      "description": "The 4 industry segments Guestway sells into, with anchor URL, eyebrow, lead and bullets."
+    }
+  ],
+  "pages": [
+    {
+      "name": "home",
+      "url": "https://guestway.io/",
+      "description": "Product overview with module ItemList, homepage FAQ mirror and customer testimonials."
+    },
+    {
+      "name": "faq",
+      "url": "https://guestway.io/faq",
+      "description": "Canonical FAQ with FAQPage JSON-LD covering every category and item in the feed above."
+    },
+    {
+      "name": "pricing",
+      "url": "https://guestway.io/pricing",
+      "description": "Pricing tiers for STR, aparthotels and hotels."
+    },
+    {
+      "name": "book-a-demo",
+      "url": "https://guestway.io/book-a-demo",
+      "description": "Demo scheduling form (HubSpot Meetings). The only place the embed loads."
+    },
+    {
+      "name": "integrations",
+      "url": "https://guestway.io/integrations",
+      "description": "Integration catalogue UI with ItemList JSON-LD and per-item status pill."
+    },
+    {
+      "name": "industries",
+      "url": "https://guestway.io/industries",
+      "description": "Per-segment positioning anchored on /industries."
+    },
+    {
+      "name": "referral-program",
+      "url": "https://guestway.io/referral-program",
+      "description": "Partner / referral motion. Refer a property manager, aparthotel or short-term rental operator to Guestway and earn up to €2,500 per successful referral. Tiered by portfolio size; cumulative milestone bonuses at 5 and 10 referrals."
+    },
+    {
+      "name": "careers",
+      "url": "https://guestway.io/careers",
+      "description": "Always-open roles in support, customer success, onboarding, engineering, marketing and sales. Based in Gent, Belgium; remote-friendly. Apply by emailing info@guestway.io."
+    }
+  ],
+  "external": [
+    {
+      "name": "docs",
+      "url": "https://docs.guestway.io/",
+      "description": "Customer Academy on GitBook. Has its own machine-readable index at https://docs.guestway.io/llms.txt and per-page .md fallbacks."
+    },
+    {
+      "name": "status",
+      "url": "https://status.guestway.io/",
+      "description": "Public status page for uptime, incidents and integration health."
+    },
+    {
+      "name": "changelog",
+      "url": "https://guestway-knowledge-base.help.usepylon.com/articles/3167002633-changelog",
+      "description": "Release notes hosted on Pylon."
+    },
+    {
+      "name": "app-login",
+      "url": "https://app.guestway.io/login",
+      "description": "Customer application sign-in. Behind auth, not crawlable."
+    }
+  ],
+  "apps": [
+    {
+      "name": "Guestway Management (iOS)",
+      "platform": "ios",
+      "url": "https://apps.apple.com/be/app/guestway-management/id6444291470",
+      "description": "iOS app for property managers, front-desk staff and cleaning staff. Same workspace as the web dashboard, scoped per role by a role-based permission system. Available in multiple languages, new languages on request."
+    },
+    {
+      "name": "Guestway Management (Android)",
+      "platform": "android",
+      "url": "https://play.google.com/store/apps/details?id=io.guestway.management&hl=en",
+      "description": "Android app for property managers, front-desk staff and cleaning staff. Same workspace as the web dashboard, scoped per role by a role-based permission system. Available in multiple languages, new languages on request."
+    }
+  ],
+  "socials": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/company/guestway-io"
+    },
+    {
+      "name": "X",
+      "url": "https://twitter.com/GuestwayBV"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@GuestwayOfficial"
+    }
+  ]
+}
