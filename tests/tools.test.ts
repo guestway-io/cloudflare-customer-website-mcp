@@ -6,7 +6,7 @@ describe('tools', () => {
   beforeEach(() => mockFetch());
   afterEach(() => vi.unstubAllGlobals());
 
-  it('lists exactly the 8 V1 tools', async () => {
+  it('lists exactly the 9 tools', async () => {
     const { client, close } = await connectClient();
     const { tools } = await client.listTools();
     const names = tools.map((t) => t.name).sort();
@@ -16,12 +16,27 @@ describe('tools', () => {
         'get_company_info',
         'get_integration',
         'get_solution',
+        'get_testimonials',
         'route_question',
         'search_faq',
         'search_integrations',
         'search_solutions',
       ].sort(),
     );
+    await close();
+  });
+
+  it('get_testimonials returns customer quotes with author + company', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'get_testimonials',
+      arguments: {},
+    });
+    const data = parseToolJson(res as any);
+    expect(data.total).toBe(5);
+    expect(data.testimonials[0].author).toBeTruthy();
+    expect(data.testimonials[0].company).toBeTruthy();
+    expect(data.testimonials.some((t: any) => t.featured)).toBe(true);
     await close();
   });
 
@@ -116,6 +131,11 @@ describe('tools', () => {
     expect(data.slug).toBe('ai-inbox');
     expect(data.url).toContain('/solutions/ai-inbox');
     expect(Array.isArray(data.faqs)).toBe(true);
+    // Enriched fields from the richer solutions feed.
+    expect(data.intro.statement).toBeTruthy();
+    expect(data.stories.length).toBeGreaterThan(0);
+    expect(data.capabilities.length).toBeGreaterThan(0);
+    expect(Array.isArray(data.related)).toBe(true);
     await close();
   });
 

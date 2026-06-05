@@ -41,5 +41,41 @@ const company = await client.callTool({
 const companyData = JSON.parse(company.content[0].text);
 console.log('get_company_info -> apps:', companyData.apps.length, 'socials:', companyData.socials.length);
 
+const testi = await client.callTool({ name: 'get_testimonials', arguments: {} });
+const testiData = JSON.parse(testi.content[0].text);
+console.log('get_testimonials ->', testiData.total, 'quotes, first:', testiData.testimonials[0].author);
+
+const sol = await client.callTool({
+  name: 'get_solution',
+  arguments: { slug: 'ai-inbox' },
+});
+const solData = JSON.parse(sol.content[0].text);
+console.log(
+  'get_solution(ai-inbox) -> stories:',
+  solData.stories.length,
+  'capabilities:',
+  solData.capabilities.length,
+  'intro:',
+  JSON.stringify(solData.intro.statement),
+);
+
+const priv = await client.readResource({ uri: 'guestway://legal/privacy' });
+console.log(
+  'resource guestway://legal/privacy ->',
+  priv.contents[0].mimeType,
+  ',',
+  priv.contents[0].text.length,
+  'chars',
+);
+
+const dpa = await client.readResource({ uri: 'guestway://legal/dpa' });
+console.log(
+  'resource guestway://legal/dpa ->',
+  JSON.parse(dpa.contents[0].text).note ? 'contract-only pointer (no body)' : 'UNEXPECTED body',
+);
+
+const tRes = await client.readResource({ uri: 'guestway://testimonials' });
+console.log('resource guestway://testimonials ->', JSON.parse(tRes.contents[0].text).total, 'quotes');
+
 await client.close();
-console.log('\nOK: live MCP handshake + tool calls succeeded.');
+console.log('\nOK: live MCP handshake + new-surface tool/resource calls succeeded.');

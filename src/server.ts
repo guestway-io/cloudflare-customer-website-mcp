@@ -9,6 +9,7 @@ import { registerFaqTools } from './tools/faq';
 import { registerSolutionTools } from './tools/solutions';
 import { registerIntegrationTools } from './tools/integrations';
 import { registerCompanyTool } from './tools/company';
+import { registerTestimonialTool } from './tools/testimonials';
 import { registerRouteTool } from './tools/route';
 import { registerResources } from './resources/index';
 import { registerPrompts } from './prompts/index';
@@ -22,6 +23,7 @@ export function createServer(env: Env): McpServer {
   registerSolutionTools(server, env);
   registerIntegrationTools(server, env);
   registerCompanyTool(server, env);
+  registerTestimonialTool(server, env);
   registerRouteTool(server, env);
   registerResources(server, env);
   registerPrompts(server, env);

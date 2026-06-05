@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T12:59:07.106Z",
+  "generatedAt": "2026-06-05T14:37:04.056Z",
   "source": "https://guestway.io/",
   "total": 9,
   "solutions": [
@@ -16,7 +16,165 @@
       "seo": {
         "title": "AI Inbox · Guestway",
         "description": "Centralize Airbnb, Booking.com, WhatsApp, SMS and email in one inbox. AI-suggested replies in 30+ languages, sentiment scoring, and full operational context per conversation."
-      }
+      },
+      "intro": {
+        "statement": "More than messaging, operational command center.",
+        "sub": "Conversations across every channel with real-time collaboration, AI-suggested replies, and instant access to risk scores, mood detection, reservations, listings, cleaning tasks and access codes, without leaving the thread."
+      },
+      "stories": [
+        {
+          "kicker": "AI replies",
+          "title": "Reply in seconds, not hours, in 30+ languages.",
+          "body": "AI-suggested replies trained on your tone of voice. Translate inbound and outbound messages on the fly. Approve, edit, or send, your call, every time.",
+          "bullets": [
+            "Real-time translation in both directions",
+            "Auto-replies for FAQs (Wi-Fi, check-in, parking)",
+            "Personalize, save replies, or sync from your PMS"
+          ]
+        },
+        {
+          "kicker": "AI detection",
+          "title": "Catches emergencies before they catch you.",
+          "body": "The AI reads every message and flags critical situations, fire alarms, lock-outs, complaints, damage reports, instantly. Your team gets a clear escalation path, not a buried thread.",
+          "bullets": [
+            "Auto-tags: request · complaint · feedback · damage",
+            "Mood detection across the entire stay",
+            "Push alerts for critical issues, even at 3am"
+          ]
+        },
+        {
+          "kicker": "Operational context",
+          "title": "Every detail, one click away.",
+          "body": "See reservation and listing details, AI-generated chat summaries, mood and risk scores, access codes, and tasks, all next to the conversation. Stop tab-hopping.",
+          "bullets": [
+            "Reservation, listing, verifications & past reviews",
+            "AI chat summary so you can pick up mid-thread",
+            "Risk score, sentiment & access codes inline"
+          ]
+        },
+        {
+          "kicker": "Real-time collaboration",
+          "title": "One thread. One team. Zero overlap.",
+          "body": "Assign conversations, leave internal notes, and see who's typing, so nothing falls through the cracks and no one steps on each other's reply.",
+          "bullets": [
+            "Assign threads, internal notes & smart tags",
+            "Live “typing” and “seen by” indicators",
+            "Filter by team, status, channel or sentiment"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "AI assistant",
+          "description": "Suggested responses and automated guest communication.",
+          "category": "ai"
+        },
+        {
+          "title": "AI chat summary",
+          "description": "One-click recap of long threads, pick up exactly where you left off.",
+          "category": "ai"
+        },
+        {
+          "title": "Translations",
+          "description": "Real-time message translation in 30+ languages.",
+          "category": "ai"
+        },
+        {
+          "title": "Reservation risk score",
+          "description": "Reliability scoring from historical data, auto pre-approve safe guests.",
+          "category": "ai"
+        },
+        {
+          "title": "Pre-approve & approve bookings",
+          "description": "Review and approve Airbnb requests from the thread, no tab switching.",
+          "category": "ai"
+        },
+        {
+          "title": "Sentiment check",
+          "description": "Track mood across the stay, request reviews on positive sentiment.",
+          "category": "ai"
+        },
+        {
+          "title": "Never miss a message",
+          "description": "OTAs, WhatsApp, email, SMS, centralized in one inbox.",
+          "category": "comm"
+        },
+        {
+          "title": "Custom domain",
+          "description": "Send from your own domain so guests recognize who's contacting them.",
+          "category": "comm"
+        },
+        {
+          "title": "Broadcasting",
+          "description": "Message every relevant guest at once, directly from the inbox.",
+          "category": "comm"
+        },
+        {
+          "title": "Guest information",
+          "description": "Verifications, Airbnb reviews and profile pictures, at a glance.",
+          "category": "comm"
+        },
+        {
+          "title": "Airbnb resolutions center",
+          "description": "Respond to Airbnb resolution cases without leaving the inbox.",
+          "category": "comm"
+        },
+        {
+          "title": "Access codes",
+          "description": "View, share, regenerate or disable smart-lock codes inside the thread.",
+          "category": "ops"
+        },
+        {
+          "title": "Task management",
+          "description": "Assign messages to staff and flag what really matters.",
+          "category": "ops"
+        },
+        {
+          "title": "Services",
+          "description": "Add a service from the inbox, cleaning staff sees it instantly in their app.",
+          "category": "ops"
+        },
+        {
+          "title": "Internal notes & smart tags",
+          "description": "Tag urgency, leave context, and let AI categorize each message.",
+          "category": "org"
+        },
+        {
+          "title": "Assign conversations",
+          "description": "Hand off threads to a teammate so nothing slips.",
+          "category": "org"
+        },
+        {
+          "title": "Filter your inbox",
+          "description": "Slice by channel, status, sentiment, team, urgency, anything.",
+          "category": "org"
+        },
+        {
+          "title": "Saved inbox views",
+          "description": "Save filter combinations and reopen your go-to views in one click.",
+          "category": "org"
+        },
+        {
+          "title": "Mute messages",
+          "description": "Silence spam or noisy conversations for as long as you want.",
+          "category": "org"
+        },
+        {
+          "title": "Remind me",
+          "description": "Push a thread back to the top exactly when you need it.",
+          "category": "org"
+        },
+        {
+          "title": "Flag conversation",
+          "description": "Mark important threads and come back to them when it suits you.",
+          "category": "org"
+        }
+      ],
+      "related": [
+        "multi-calendar",
+        "access-management",
+        "cleaning-management"
+      ]
     },
     {
       "slug": "review-center",
@@ -31,7 +189,125 @@
       "seo": {
         "title": "Review Center · Guestway",
         "description": "One dashboard for every review. AI-drafted replies, sentiment analysis, and unit-level performance tracking, turn guest feedback into operational wins."
-      }
+      },
+      "intro": {
+        "statement": "Your control tower for guest feedback and operational insights.",
+        "sub": "Guestway's Review Center unifies every review and detects the operational patterns hiding in them, from cleaning quality to check-in friction. Stop replying. Start improving."
+      },
+      "stories": [
+        {
+          "kicker": "Centralized reviews",
+          "title": "Every OTA, one filterable dashboard.",
+          "body": "Airbnb, Booking.com, Vrbo and beyond, every review in one place. Filter by score, channel, listing, sentiment. Drill in. Decide fast.",
+          "bullets": [
+            "All major OTAs out of the box",
+            "Per-listing, per-cleaner, per-staff filters",
+            "Sentiment + theme tagging"
+          ]
+        },
+        {
+          "kicker": "AI reply suggestions",
+          "title": "Auto-generated, tone-matched replies.",
+          "body": "AI drafts responses tuned to sentiment, language, and guest type. Approve with one click, or fully automate. Your tone, your voice, at scale.",
+          "bullets": [
+            "Tone-matched per review",
+            "Approve, edit, or full-auto",
+            "Multi-language out of the box"
+          ]
+        },
+        {
+          "kicker": "Performance tracking",
+          "title": "Sentiment trends. Staff scorecards. Unit dashboards.",
+          "body": "Spot problems before guests escalate them. Track which listings, cleaners, or check-in instructions generate consistent praise, or recurring complaints.",
+          "bullets": [
+            "Per-cleaner / per-supervisor scores",
+            "Unit-level outlier detection",
+            "Reviewer benchmarking by listing"
+          ]
+        },
+        {
+          "kicker": "Ops feedback loop",
+          "title": "Reviews → tasks. Automatically.",
+          "body": "Repeated complaints become assigned tasks. Cleaning, maintenance, comms, each issue routed to the right team. Reviews stop being passive feedback.",
+          "bullets": [
+            "Auto-task creation from review themes",
+            "Routes to the right team and supervisor",
+            "Closes the loop with resolution tracking"
+          ]
+        },
+        {
+          "kicker": "Unified feed",
+          "title": "Every review, ranked by sensitivity.",
+          "body": "Aggregates reviews from every connected platform, ranked by priority and sensitivity. Compare each one against your benchmark to spot outliers.",
+          "bullets": [
+            "Sensitivity scoring vs property benchmark",
+            "Priority queue for low-score reviews",
+            "Filter by channel + score"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "AI-generated replies",
+          "description": "Automated, tone-matched responses to every review.",
+          "category": "general"
+        },
+        {
+          "title": "Translation",
+          "description": "Auto-translates inbound reviews and outbound replies in 30+ languages.",
+          "category": "general"
+        },
+        {
+          "title": "Review analysis",
+          "description": "AI summarizes patterns and surfaces actionable insights.",
+          "category": "general"
+        },
+        {
+          "title": "Data overview",
+          "description": "Full performance summary, scores, trends, outliers.",
+          "category": "general"
+        },
+        {
+          "title": "Cleaning performance",
+          "description": "See how each cleaning team scored, by review.",
+          "category": "general"
+        },
+        {
+          "title": "Communication performance",
+          "description": "Score how the team handled the conversation behind every review.",
+          "category": "general"
+        },
+        {
+          "title": "Sentiment & tagging",
+          "description": "AI flags positive, neutral or negative, plus themes like cleanliness.",
+          "category": "general"
+        },
+        {
+          "title": "Review sensitivity",
+          "description": "Compare each review against your property benchmark to spot outliers.",
+          "category": "general"
+        },
+        {
+          "title": "Staff & unit-level tracking",
+          "description": "Filter reviews by listing, cleaner, or instruction set.",
+          "category": "general"
+        },
+        {
+          "title": "Auto-suggested replies",
+          "description": "Drafts personalized to review, language and tone.",
+          "category": "general"
+        },
+        {
+          "title": "Feedback to action flow",
+          "description": "Repeated issues become assigned tasks. Reviews fix things.",
+          "category": "general"
+        }
+      ],
+      "related": [
+        "ai-inbox",
+        "automations",
+        "cleaning-management"
+      ]
     },
     {
       "slug": "guest-app",
@@ -46,7 +322,115 @@
       "seo": {
         "title": "White-label guest app for hotels & short-term rentals · Guestway",
         "description": "White-label guest app and PWA: self check-in, smart-lock codes, upsells, and a digital guidebook. No downloads required."
-      }
+      },
+      "intro": {
+        "statement": "Your guests' all-in-one digital concierge, with zero downloads.",
+        "sub": "A seamless, branded experience from booking to checkout. Smart-lock codes, check-in instructions, local tips, and more, mobile-first and personalized to your brand."
+      },
+      "stories": [
+        {
+          "kicker": "All-in-one hub",
+          "title": "Every detail of the stay, in one tap.",
+          "body": "Confirmations, codes, instructions, local recs, upsells, branded to look and feel like yours. Guests get the link before arrival; everything updates in real time.",
+          "bullets": [
+            "Branded URL, logos, colors, contact",
+            "Auto-sent via email/SMS after every booking confirmation",
+            "Updates live as the reservation evolves"
+          ]
+        },
+        {
+          "kicker": "Smart access built in",
+          "title": "Lock codes, synced live to the reservation.",
+          "body": "Smart-lock codes synced from Guestway, tied to the reservation timeline, secure, dynamic, and always up to date. No PDFs, no late-night code lookups.",
+          "bullets": [
+            "Per-reservation codes for every door",
+            "Auto-revokes after checkout",
+            "Service codes (parking, gym) bundled"
+          ]
+        },
+        {
+          "kicker": "In-app messaging",
+          "title": "Direct chat, with translation built in.",
+          "body": "Two-way chat between guest and host. AI translation on your side; native language on theirs. Every conversation pipes back into the AI Inbox.",
+          "bullets": [
+            "Real-time translation in 30+ languages",
+            "AI suggestions on the host side",
+            "Threaded back into the Unified Inbox"
+          ]
+        },
+        {
+          "kicker": "Identity verification",
+          "title": "Compliant ID checks, automated.",
+          "body": "Collect IDs, signatures, and required guest info, automatically and compliantly. No manual back-and-forth.",
+          "bullets": [
+            "Per-jurisdiction compliance presets",
+            "Auto-signed digital agreements",
+            "Stored encrypted, compliant by default"
+          ]
+        },
+        {
+          "kicker": "Personalize",
+          "title": "Per-listing or per-org customization.",
+          "body": "House manuals, check-in videos, local recs, PDFs, branding, set once at the org level, override per listing. Guests see exactly what's relevant to where they're staying.",
+          "bullets": [
+            "Inheritable templates",
+            "Per-listing overrides",
+            "Multi-language content"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Temperature control",
+          "description": "Guests adjust the property climate from the app, within limits you set.",
+          "category": "general"
+        },
+        {
+          "title": "Custom branding",
+          "description": "Logos, colors, contact info, fully aligned to your brand identity.",
+          "category": "general"
+        },
+        {
+          "title": "Digital check-in & out",
+          "description": "Contactless arrivals and departures with smart-lock integration.",
+          "category": "general"
+        },
+        {
+          "title": "Reservation summary",
+          "description": "Stay dates, balance, check-out instructions, in one synced view.",
+          "category": "general"
+        },
+        {
+          "title": "Mood control",
+          "description": "Smart-lighting color and intensity, for the perfect ambiance.",
+          "category": "general"
+        },
+        {
+          "title": "Digital guidebook",
+          "description": "House rules, restaurant tips, Wi-Fi, checkout times, always up to date.",
+          "category": "general"
+        },
+        {
+          "title": "Branded check-in",
+          "description": "Step-by-step arrival guides with photos, maps, videos.",
+          "category": "general"
+        },
+        {
+          "title": "Damage waivers",
+          "description": "Earn additional revenue and peace of mind by offering guests a damage waiver for accidents during their stay, directly from the guest portal.",
+          "category": "general"
+        },
+        {
+          "title": "Upsells",
+          "description": "Earn additional revenue by upselling early check-ins, late check-outs, mid-stay cleaning, and more, directly from the guest portal.",
+          "category": "general"
+        }
+      ],
+      "related": [
+        "ai-inbox",
+        "access-management",
+        "climate-control"
+      ]
     },
     {
       "slug": "automations",
@@ -61,7 +445,80 @@
       "seo": {
         "title": "Automations · Guestway",
         "description": "Automate guest communication and operational workflows triggered by real reservation events. Cut repetitive work, never miss a follow-up, and keep every stay smooth."
-      }
+      },
+      "intro": {
+        "statement": "Cut through repetitive tasks with automations that run on real events.",
+        "sub": "Confirmations, follow-ups, no-show handling, custom post-stay flows. Nothing slips through. Your team focuses on conversations that need a human."
+      },
+      "stories": [
+        {
+          "kicker": "Automated messages",
+          "title": "The right message, the right channel, the right moment.",
+          "body": "Booking confirmations, check-in instructions, reminders, review requests, sent via SMS, email, or the OTA they used to book. No manual follow-ups, no copy-paste.",
+          "bullets": [
+            "Per-stage templates with merge tags",
+            "Channel-aware routing",
+            "Multi-language out of the box"
+          ]
+        },
+        {
+          "kicker": "Event-triggered workflows",
+          "title": "Workflows that run when something actually happens.",
+          "body": "After checkout, Guestway gauges satisfaction and either requests a review from happy guests or routes negative experiences to staff. Smart workflows that protect your reputation.",
+          "bullets": [
+            "Conditional branches by sentiment / score / theme",
+            "Multi-step flows with delays + dependencies",
+            "Replies route back to the AI Inbox"
+          ]
+        },
+        {
+          "kicker": "Operations automation",
+          "title": "Beyond messaging, the ops layer.",
+          "body": "Schedule cleanings, assign maintenance, manage smart devices. No-show detected? Confirm with the guest, then turn off the heating. Save staff time and energy costs in one move.",
+          "bullets": [
+            "Triggers across cleaning, IoT, access",
+            "Custom logic per property type or region",
+            "Drag-and-drop builder"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Smart timing",
+          "description": "Deliver messages at exactly the right moment, before, during, or after a stay.",
+          "category": "general"
+        },
+        {
+          "title": "Personalized templates",
+          "description": "Auto-fill guest names, reservation details and stay info for personal-feel at scale.",
+          "category": "general"
+        },
+        {
+          "title": "No-show handling",
+          "description": "Auto follow-up with guests who don't check in, with optional energy save-mode trigger.",
+          "category": "general"
+        },
+        {
+          "title": "Test without stress",
+          "description": "Dry-run workflows on sample reservations before you go live, so guests never get a misfire.",
+          "category": "general"
+        },
+        {
+          "title": "Length-of-stay rules",
+          "description": "Different automations for a 2-night weekend, a week-long booking, or a month-long stay, from one builder.",
+          "category": "general"
+        },
+        {
+          "title": "Webhooks",
+          "description": "Push events to your stack when a step runs, CRM updates, Slack alerts, or custom endpoints.",
+          "category": "general"
+        }
+      ],
+      "related": [
+        "ai-inbox",
+        "review-center",
+        "cleaning-management"
+      ]
     },
     {
       "slug": "multi-calendar",
@@ -76,7 +533,85 @@
       "seo": {
         "title": "Multi-calendar · Guestway",
         "description": "Every booking, every channel, every property, in one conflict-free view. Real-time sync from your PMS and OTAs, drag-to-reassign, instant filters."
-      }
+      },
+      "intro": {
+        "statement": "Every booking, every channel, one source of truth.",
+        "sub": "The Multi-calendar pulls every booking from your connected PMS and OTAs (Airbnb, Booking.com, Vrbo, direct) into a single, easy-to-read calendar, synced live."
+      },
+      "stories": [
+        {
+          "kicker": "Stay organized",
+          "title": "Arrivals, departures, availability, at a glance.",
+          "body": "See every property's state for every day at any room level. No more cross-referencing tabs to figure out who's checking in tomorrow.",
+          "bullets": [
+            "Daily, weekly, monthly views",
+            "Color-coded by source or status",
+            "Per-property and portfolio-wide views"
+          ]
+        },
+        {
+          "kicker": "Conflict prevention",
+          "title": "Spot overlaps before they happen.",
+          "body": "Channel manager out of sync? OTA double-booked? The Multi-calendar surfaces conflicts the moment they appear, with a one-click resolution flow.",
+          "bullets": [
+            "Conflict warnings on every overlap",
+            "Drag-to-reassign across units",
+            "Channel-level sync status, so you know the OTA causing the issue in seconds."
+          ]
+        },
+        {
+          "kicker": "Operational planning",
+          "title": "Coordinate cleaning, check-ins, and team tasks.",
+          "body": "Cleaning teams, supervisors, and the front desk all work from the same up-to-date schedule. Late check-out approved? Cleaners see it instantly.",
+          "bullets": [
+            "Auto-pushes updates to cleaning + ops queues",
+            "Filter by team, building, or city",
+            "Notes and tasks pin to the day they affect"
+          ]
+        },
+        {
+          "kicker": "Time saved",
+          "title": "Manage every reservation without app-switching.",
+          "body": "One view. One source of truth. The team stops hunting through five tabs to answer a single question.",
+          "bullets": [
+            "Inline reservation editing",
+            "Filter by listing, nickname, city, ZIP",
+            "Keyboard shortcuts for power users"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Unified view",
+          "description": "Airbnb, Booking.com, Vrbo and direct, all in one calendar.",
+          "category": "general"
+        },
+        {
+          "title": "Filter & search",
+          "description": "Find reservations by property, date, or guest in seconds.",
+          "category": "general"
+        },
+        {
+          "title": "Color-coded clarity",
+          "description": "Distinguish properties, statuses, or sources at a glance.",
+          "category": "general"
+        },
+        {
+          "title": "Team collaboration",
+          "description": "Everyone sees the same view, no version drift, no surprises.",
+          "category": "general"
+        },
+        {
+          "title": "Real-time sync",
+          "description": "New bookings, cancellations and changes appear instantly from PMS and OTAs.",
+          "category": "general"
+        }
+      ],
+      "related": [
+        "cleaning-management",
+        "access-management",
+        "climate-control"
+      ]
     },
     {
       "slug": "cleaning-management",
@@ -91,7 +626,135 @@
       "seo": {
         "title": "Cleaning Management · Guestway",
         "description": "Auto-schedule cleanings from reservations, assign the right teams, track photo proof, and close the loop with supervisors, all in real time."
-      }
+      },
+      "intro": {
+        "statement": "Cleaning operations, without the spreadsheets or guesswork.",
+        "sub": "Tasks auto-scheduled from reservations, routed to the right teams, tracked with photo proof, and visible to supervisors in real time. Spotless units, every time."
+      },
+      "stories": [
+        {
+          "kicker": "Auto-scheduling",
+          "title": "Tasks generated from bookings. Live.",
+          "body": "Cleanings auto-create from arrivals, departures, and mid-stay rules. Guest extends or cancels last-minute? The schedule reflows in real time, no manual entry, no missed turnovers.",
+          "bullets": [
+            "Per-listing rules and templates",
+            "Auto-pushes changes to cleaner apps",
+            "Same-day turnaround flagged automatically"
+          ]
+        },
+        {
+          "kicker": "Photo proof",
+          "title": "Before/after photos for every job.",
+          "body": "Cleaners upload photos at every stage and flag damage instantly. Supervisors review from one dashboard, no more chasing WhatsApp threads.",
+          "bullets": [
+            "Per-room photo checklists",
+            "Damage reports with image evidence",
+            "Filter by team, property, or score"
+          ]
+        },
+        {
+          "kicker": "Supervisor view",
+          "title": "Live board: status, priority, completion.",
+          "body": "Real-time job board with priority levels and SLA timers. Supervisors see what's done, in-progress, and at risk, in one glance.",
+          "bullets": [
+            "Status: queued / active / done / flagged",
+            "Priority badges: urgent, late, same-day",
+            "Live ETAs from cleaner check-ins"
+          ]
+        },
+        {
+          "kicker": "Cross-team",
+          "title": "Coordinate cleaning, maintenance, and ops together.",
+          "body": "Schedule turnovers, deep cleans, and maintenance jobs in one queue. No collisions, no missed handoffs, no “who's where?”",
+          "bullets": [
+            "Unified queue for cleaning + maintenance",
+            "Auto-assign by team capacity and location",
+            "Backup teams pre-defined for emergencies"
+          ]
+        },
+        {
+          "kicker": "Team setup",
+          "title": "Every partner, supervisor, and listing in one place.",
+          "body": "Create cleaning teams once with internal notes, supervisors, members, and linked listings. Each property maps to exactly one team, so turnovers always route to the right crew without duplicate assignments or spreadsheet handoffs.",
+          "bullets": [
+            "Dashboard: name, notes, and listing coverage",
+            "Supervisors and cleaners linked per team",
+            "Re-link listings when partners change"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Supervisor view",
+          "description": "Live status, internal notes, image-evidence review, one dashboard.",
+          "category": "general"
+        },
+        {
+          "title": "Smart-lock integration",
+          "description": "Battery status visible, with auto-recharge scheduling.",
+          "category": "general"
+        },
+        {
+          "title": "Service templates",
+          "description": "Add tasks from the inbox; cleaning teams see them instantly.",
+          "category": "general"
+        },
+        {
+          "title": "Team coordination",
+          "description": "Real-time progress, backup assignment, internal notes.",
+          "category": "general"
+        },
+        {
+          "title": "Issue reporting",
+          "description": "Cleaners flag extreme situations from inside the app.",
+          "category": "general"
+        },
+        {
+          "title": "Team chat",
+          "description": "Direct messaging between cleaning teams and the office.",
+          "category": "general"
+        },
+        {
+          "title": "Auto-scheduled cleanings",
+          "description": "Schedule from arrivals, departures, and mid-stay rules.",
+          "category": "general"
+        },
+        {
+          "title": "Priority flags",
+          "description": "Same-day turnarounds, late departures, early check-ins, highlighted.",
+          "category": "general"
+        },
+        {
+          "title": "Owner tag",
+          "description": "Notify cleaners about upcoming owner stays so crews deep clean the unit and leave everything perfect.",
+          "category": "general"
+        },
+        {
+          "title": "Digital checklists",
+          "description": "Custom per-unit lists, linen counts, and room-by-room notes.",
+          "category": "general"
+        },
+        {
+          "title": "Cleaner mobile app",
+          "description": "Each cleaner sees assigned tasks, instructions, codes.",
+          "category": "general"
+        },
+        {
+          "title": "Before & after photos",
+          "description": "Photo proof per room. Damage flagged immediately.",
+          "category": "general"
+        },
+        {
+          "title": "Handyman app",
+          "description": "Same workflow, extended to maintenance teams.",
+          "category": "general"
+        }
+      ],
+      "related": [
+        "access-management",
+        "automations",
+        "ai-operations-center"
+      ]
     },
     {
       "slug": "access-management",
@@ -106,7 +769,155 @@
       "seo": {
         "title": "Access Management · Guestway",
         "description": "One unified code per reservation across every smart lock brand. Auto-issued, dynamically updated, fully audited, with manual override always one click away."
-      }
+      },
+      "intro": {
+        "statement": "Access is more than a lock, it’s the first impression of every stay.",
+        "sub": "We built access management that goes beyond what others offer. One unified code per reservation across every smart-lock brand, automated end-to-end, with override always one click away."
+      },
+      "stories": [
+        {
+          "kicker": "Unified codes",
+          "title": "One code per reservation. Every lock. Every door.",
+          "body": "No matter how many smart-lock brands are installed, the guest gets one code. Auto-created five days before arrival, synced two days in advance, shared via the channel they used to book.",
+          "bullets": [
+            "Auto-pre-issue, auto-share, auto-revoke",
+            "Works across mixed-brand portfolios",
+            "Never “which code is for which door?” again"
+          ]
+        },
+        {
+          "kicker": "Dynamic updates",
+          "title": "Reservation changes? The code follows.",
+          "body": "Guest moved to a different unit, stay extended, early check-in approved, the code updates on the fly. No manual intervention. No operational errors. No frantic 11pm calls.",
+          "bullets": [
+            "Move, extend or shorten reservations live",
+            "Codes propagate to every linked device",
+            "Audit trail captures every change"
+          ]
+        },
+        {
+          "kicker": "Service-based access",
+          "title": "Same code unlocks parking, gym, lounges.",
+          "body": "Optional services activate automatically for any additional smart locks tied to the reservation. The guest gets one code; you get one console.",
+          "bullets": [
+            "Parking, luggage, gym, lounge, all bundled",
+            "Per-service rules and time windows",
+            "Instant activation on confirmation"
+          ]
+        },
+        {
+          "kicker": "Manual control",
+          "title": "Full automation. With the override always at hand.",
+          "body": "Allow early or late access, block by disabling a code, or regenerate if security is ever in question. You stay in the driver's seat.",
+          "bullets": [
+            "Allow / block / regenerate per code",
+            "Emergency lockdown disables every lock",
+            "Per-staff role permissions"
+          ]
+        },
+        {
+          "kicker": "Audit trail",
+          "title": "Every entry, signed and time-stamped.",
+          "body": "Full audit trail of who entered and when, guests, staff, vendors. Verify check-ins, identify no-shows, maintain visibility. GDPR + SOC 2 ready.",
+          "bullets": [
+            "Per-door, per-code, per-user logs",
+            "Filter by date, listing, guest, staff",
+            "Exportable for compliance review"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Flexible check-in",
+          "description": "Grant access at the exact arrival time, or the moment check-in opens.",
+          "category": "general"
+        },
+        {
+          "title": "Cleaning integration",
+          "description": "Cleaning staff get notified when a smart lock's battery runs low.",
+          "category": "general"
+        },
+        {
+          "title": "Device monitoring",
+          "description": "Status and battery health of every connected lock, live.",
+          "category": "general"
+        },
+        {
+          "title": "Granular control",
+          "description": "Manage access per service, parking, gym, amenities.",
+          "category": "general"
+        },
+        {
+          "title": "Secure by design",
+          "description": "Every entry logged. GDPR + SOC 2 compliant infrastructure.",
+          "category": "general"
+        },
+        {
+          "title": "Works with your locks",
+          "description": "Nuki, Yale, Salto, Brivo, and more.",
+          "category": "general"
+        },
+        {
+          "title": "Fallback code pool",
+          "description": "Connectivity drops? Fallback codes keep guests inside.",
+          "category": "general"
+        },
+        {
+          "title": "Temporary codes",
+          "description": "Time-limited codes for guests, cleaners, maintenance.",
+          "category": "general"
+        },
+        {
+          "title": "Remote door open",
+          "description": "Open doors remotely for guests or staff who need help.",
+          "category": "general"
+        },
+        {
+          "title": "Toggle time",
+          "description": "Code lifetime tunable from hours to days.",
+          "category": "general"
+        },
+        {
+          "title": "Remote access choice",
+          "description": "Decide which locks can be opened remotely.",
+          "category": "general"
+        },
+        {
+          "title": "Distance-based permissions",
+          "description": "Doors only open when the guest is physically near the property.",
+          "category": "general"
+        },
+        {
+          "title": "Team access",
+          "description": "Cleaners, maintenance, emergency staff, each with time-bound codes.",
+          "category": "general"
+        },
+        {
+          "title": "Smooth guest journey",
+          "description": "Codes and instructions delivered automatically via the Guest App.",
+          "category": "general"
+        },
+        {
+          "title": "Check-in protection",
+          "description": "Block facility access until check-in is officially complete.",
+          "category": "general"
+        },
+        {
+          "title": "Auto-revoke at checkout",
+          "description": "Allow extended access, or expire codes the moment a stay ends.",
+          "category": "general"
+        },
+        {
+          "title": "Emergency lockdown",
+          "description": "Disable every lock instantly to secure the property.",
+          "category": "general"
+        }
+      ],
+      "related": [
+        "guest-app",
+        "cleaning-management",
+        "climate-control"
+      ]
     },
     {
       "slug": "climate-control",
@@ -121,7 +932,65 @@
       "seo": {
         "title": "Climate Control · Guestway",
         "description": "Intelligent climate control, automated by reservations, optimized for energy. Comfortable guests. Lower bills. No manual thermostat work."
-      }
+      },
+      "intro": {
+        "statement": "Heating and cooling that adjusts itself.",
+        "sub": "Climate control automated by reservations, occupancy and seasonality. Customers report up to 30% lower utility costs without sacrificing comfort."
+      },
+      "stories": [
+        {
+          "kicker": "Direct control",
+          "title": "Set min/max in seconds. Or turn it off.",
+          "body": "Adjust temperature limits with a few clicks. Toggle between heating and cooling, or turn the system off entirely when units are vacant.",
+          "bullets": [
+            "Per-unit min/max temperature limits",
+            "Heat / cool / off mode toggle",
+            "Bulk-edit across portfolios"
+          ]
+        },
+        {
+          "kicker": "Managed mode",
+          "title": "Energy efficiency on autopilot.",
+          "body": "Switch on Managed mode, Guestway automates heating and cooling based on occupancy, seasonality and check-in/out times. Lower bills, hands off.",
+          "bullets": [
+            "Occupancy-aware schedules",
+            "Pre-arrival warm-up / cool-down",
+            "Vacant-mode for empty units"
+          ]
+        },
+        {
+          "kicker": "Optimization",
+          "title": "Track temperature, humidity, performance.",
+          "body": "Live device-level monitoring with insights into heating/cooling performance. Spot underperforming systems before guests complain.",
+          "bullets": [
+            "Per-unit temperature + humidity charts",
+            "Anomaly detection on system underperformance",
+            "Maintenance alerts before failure"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Real-time monitoring",
+          "description": "Temperature, humidity and system status across the portfolio, live in one place.",
+          "category": "general"
+        },
+        {
+          "title": "Rapid integrations",
+          "description": "Native: Nest, Zennio, Honeywell, and more. New devices ship in days.",
+          "category": "general"
+        },
+        {
+          "title": "Adaptive scheduling",
+          "description": "Auto-adjusts on bookings, check-in/out times, or local weather.",
+          "category": "general"
+        }
+      ],
+      "related": [
+        "access-management",
+        "guest-app",
+        "multi-calendar"
+      ]
     },
     {
       "slug": "ai-operations-center",
@@ -136,7 +1005,100 @@
       "seo": {
         "title": "AI Operations Center · Guestway",
         "description": "Proactive control tower for hospitality ops. Guestway parses messages, reviews, and system data to surface issues, auto-create tasks, and notify the right team before guests escalate."
-      }
+      },
+      "intro": {
+        "statement": "Your control tower for operations, powered by AI.",
+        "sub": "Monitors messages, system data, and reviews in real time to catch issues early. From missing towels to broken locks, Guestway flags problems, creates tasks, notifies the right people, and helps fix root causes before they become complaints."
+      },
+      "stories": [
+        {
+          "kicker": "Time saved",
+          "title": "Save 40+ staff hours per week",
+          "body": "Guestway parses guest communication and reviews to automatically detect problems and trigger action, the team focuses on resolving, not triaging.",
+          "bullets": [
+            "Auto-summarizes hundreds of conversations",
+            "Surfaces what needs human attention",
+            "Routes the rest into automated workflows"
+          ]
+        },
+        {
+          "kicker": "Predict & prevent",
+          "title": "Spot patterns before they spread.",
+          "body": "Recurring A/C leaks? Wi-Fi complaints clustering on one floor? The AI Operations Center surfaces patterns so you fix root causes, not just symptoms.",
+          "bullets": [
+            "Cross-property pattern detection",
+            "Trend alerts on category spikes",
+            "Suggested root-cause hypotheses"
+          ]
+        },
+        {
+          "kicker": "Team collaboration",
+          "title": "Communication, in-context.",
+          "body": "Comments, internal notes, status changes, stays attached to the issue, never in WhatsApp. Audit-friendly for incident reviews.",
+          "bullets": [
+            "Per-issue threads with mentions",
+            "Status timeline + audit log",
+            "Hand-offs between shifts"
+          ]
+        },
+        {
+          "kicker": "Auto task creation",
+          "title": "Issue flagged → task generated.",
+          "body": "Tasks pre-filled with priority, assignee, checklist, by your rules. Workflows tailored by property type, region, or supervisor.",
+          "bullets": [
+            "Custom workflows per category",
+            "Auto-assignment by region / supervisor",
+            "SLA timers + escalation paths"
+          ]
+        },
+        {
+          "kicker": "Smart issue detection",
+          "title": "Smelly bathrooms, broken locks, bad reviews, all caught early.",
+          "body": "Continuously analyzes conversations, reviews, system alerts, and cleaning feedback. Catches the subtle stuff before it becomes a public review.",
+          "bullets": [
+            "AI parses messages + reviews + alerts",
+            "Cross-references against system telemetry",
+            "Confidence-scored issue suggestions"
+          ]
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Custom workflows",
+          "description": "Tailored responses and actions based on issue type.",
+          "category": "general"
+        },
+        {
+          "title": "Team communication",
+          "description": "In-platform messaging between staff, no chat-app sprawl.",
+          "category": "general"
+        },
+        {
+          "title": "Auto task creation",
+          "description": "Issue flagged → task auto-generated with priority, checklist, assignee.",
+          "category": "general"
+        },
+        {
+          "title": "Smart issue detection",
+          "description": "Analyzes conversations, reviews, alerts, and cleaning feedback live.",
+          "category": "general"
+        },
+        {
+          "title": "Predictive alerts",
+          "description": "Recurring leaks, late check-ins from dirty units, surfaced as patterns.",
+          "category": "general"
+        },
+        {
+          "title": "Centralized ops board",
+          "description": "Drag-and-drop Kanban tailored for hospitality teams.",
+          "category": "general"
+        }
+      ],
+      "related": [
+        "ai-inbox",
+        "cleaning-management",
+        "review-center"
+      ]
     }
   ]
 }

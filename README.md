@@ -113,9 +113,15 @@ An agent then follows the SVCB target to `public-mcp.guestway.io`, reads
 
 ## Surface (V1)
 
-8 tools, ~14 resource patterns (templates expand per item), 1 prompt. All
+9 tools, ~16 resource patterns (templates expand per item), 1 prompt. All
 read-only, no auth. See `/.well-known/mcp-capabilities.json` for the live
 inventory.
+
+Backed by these marketing-site feeds (single-sourced from content
+collections): `solutions` (now enriched with intro, stories, capabilities,
+related), `faq`, `integrations`, `industries`, `testimonials`, `legal`
+(full markdown for public Privacy/Terms; contract-only DPA/MSA as pointers),
+plus `llms.txt` and the agent-skills.
 
 ### Not in V1 (planned)
 
@@ -124,10 +130,8 @@ inventory.
   `assess-fit`, `objection-handle`, `compare-to-pms-stack` prompts.
 - **V3**: `search_academy` (docs.guestway.io), `get_recent_changes`
   (changelog), `get_system_status` (status page).
-- **Needs a site-side feed first**: `guestway://testimonials` (quotes live in
-  solutions YAML, not in the slim solutions feed) and machine-readable legal
-  text (pages render HTML only). `guestway://pricing` and `guestway://legal`
-  currently return FAQ-backed data and canonical pointers respectively.
+- `guestway://pricing` remains FAQ-backed by design (no machine-published
+  price list; agents are routed to a demo for exact quotes).
 
 ## Notes
 

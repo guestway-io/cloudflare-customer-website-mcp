@@ -62,6 +62,19 @@ export interface IntegrationsFeed {
   categories: IntegrationCategory[];
 }
 
+export interface SolutionStory {
+  kicker: string;
+  title: string;
+  body: string;
+  bullets: string[];
+}
+
+export interface SolutionCapability {
+  title: string;
+  description: string;
+  category: string;
+}
+
 export interface Solution {
   slug: string;
   title: string;
@@ -69,6 +82,10 @@ export interface Solution {
   url: string;
   menu: { label: string; description: string; order: number };
   seo: { title: string; description: string };
+  intro: { statement: string; sub: string };
+  stories: SolutionStory[];
+  capabilities: SolutionCapability[];
+  related: string[];
 }
 
 export interface SolutionsFeed {
@@ -95,6 +112,38 @@ export interface IndustriesFeed {
   source: string;
   total: number;
   industries: Industry[];
+}
+
+export interface Testimonial {
+  author: string;
+  company: string;
+  role?: string;
+  featured: boolean;
+  quote: string;
+}
+
+export interface TestimonialsFeed {
+  generatedAt: string;
+  source: string;
+  total: number;
+  testimonials: Testimonial[];
+}
+
+export interface LegalDoc {
+  slug: string;
+  title: string;
+  url: string;
+  effectiveDate: string;
+  version?: string;
+  listed: boolean;
+  markdown?: string;
+}
+
+export interface LegalFeed {
+  generatedAt: string;
+  source: string;
+  total: number;
+  documents: LegalDoc[];
 }
 
 export interface CatalogLink {

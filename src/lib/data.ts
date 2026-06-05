@@ -13,7 +13,9 @@ import type {
   FaqFeed,
   IndustriesFeed,
   IntegrationsFeed,
+  LegalFeed,
   SolutionsFeed,
+  TestimonialsFeed,
 } from '../types/feeds';
 
 /** How long a fetched feed/text stays warm in the edge cache. */
@@ -90,6 +92,14 @@ export function getIndustriesFeed(env: Env): Promise<IndustriesFeed> {
 
 export function getCatalogFeed(env: Env): Promise<CatalogFeed> {
   return fetchJson<CatalogFeed>(`${origin(env)}/data/catalog.json`);
+}
+
+export function getTestimonialsFeed(env: Env): Promise<TestimonialsFeed> {
+  return fetchJson<TestimonialsFeed>(`${origin(env)}/data/testimonials.json`);
+}
+
+export function getLegalFeed(env: Env): Promise<LegalFeed> {
+  return fetchJson<LegalFeed>(`${origin(env)}/data/legal.json`);
 }
 
 export function getLlmsTxt(env: Env): Promise<string> {

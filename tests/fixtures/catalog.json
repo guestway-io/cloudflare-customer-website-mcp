@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T12:59:07.102Z",
+  "generatedAt": "2026-06-05T14:37:04.051Z",
   "site": "https://guestway.io",
   "feeds": [
     {
@@ -21,6 +21,16 @@
       "name": "industries",
       "url": "https://guestway.io/data/industries.json",
       "description": "The 4 industry segments Guestway sells into, with anchor URL, eyebrow, lead and bullets."
+    },
+    {
+      "name": "testimonials",
+      "url": "https://guestway.io/data/testimonials.json",
+      "description": "Customer quotes shown on the homepage, with author, company, segment and full quote text."
+    },
+    {
+      "name": "legal",
+      "url": "https://guestway.io/data/legal.json",
+      "description": "Legal documents. Full markdown for the public Privacy and Terms; contract-only DPA and MSA are listed as links without body."
     }
   ],
   "pages": [

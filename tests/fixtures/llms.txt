@@ -18,8 +18,10 @@ type. Cache for an hour.
 - Catalog index: https://guestway.io/data/catalog.json
 - FAQ (80+ Q&As across 14 categories): https://guestway.io/data/faq.json
 - Integrations (57 systems with status per item): https://guestway.io/data/integrations.json
-- Solutions (9 product modules): https://guestway.io/data/solutions.json
+- Solutions (9 product modules, with intro, stories, capabilities): https://guestway.io/data/solutions.json
 - Industries (4 segments): https://guestway.io/data/industries.json
+- Testimonials (customer quotes with author, company, segment): https://guestway.io/data/testimonials.json
+- Legal (full text for Privacy and Terms; DPA and MSA as links): https://guestway.io/data/legal.json
 - API catalog (RFC 9727 linkset): https://guestway.io/.well-known/api-catalog
 - Agent skills index: https://guestway.io/.well-known/agent-skills/index.json
 

@@ -32,6 +32,7 @@ export function buildCapabilities(origin: string) {
       'search_integrations',
       'get_integration',
       'get_company_info',
+      'get_testimonials',
       'route_question',
     ],
     resources: [
@@ -46,8 +47,10 @@ export function buildCapabilities(origin: string) {
       'guestway://solutions/{slug}',
       'guestway://industries',
       'guestway://industries/{slug}',
+      'guestway://testimonials',
       'guestway://pricing',
       'guestway://legal',
+      'guestway://legal/{slug}',
       'guestway://skills/{slug}',
     ],
     prompts: ['route-question'],

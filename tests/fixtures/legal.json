@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-06-05T14:37:04.055Z",
+  "source": "https://guestway.io/privacy",
+  "total": 4,
+  "documents": [
+    {
+      "slug": "dpa",
+      "title": "Data Processing Agreement",
+      "url": "https://guestway.io/contract-terms/dpa",
+      "effectiveDate": "September 17, 2025",
+      "version": "2025.09",
+      "listed": false
+    },
+    {
+      "slug": "msa",
+      "title": "Master Subscription Agreement",
+      "url": "https://guestway.io/contract-terms/msa",
+      "effectiveDate": "March 19, 2026",
+      "version": "2026.02",
+      "listed": false
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy & Cookie Policy",
+      "url": "https://guestway.io/privacy",
+      "effectiveDate": "June 3, 2026",
+      "listed": true,
+      "markdown": "Guestway BV (\"Guestway\", \"we\", \"us\", or \"our\") is committed to protecting your privacy. This Privacy & Cookie Policy explains how we collect, use, and protect information when you visit our website ([guestway.io](https://guestway.io)) (the \"Website\").\n\nThis policy is designed to comply with the General Data Protection Regulation (EU) 2016/679 (\"GDPR\") and other applicable privacy laws.\n\n## Information We Collect\n\nWe may collect the following categories of information:\n\n- Personal Information: such as your name, email address, phone number, and company details, when you provide them via forms or communications.\n- Usage Data: such as IP address, browser type, pages viewed, and access times, to help us understand how the Website is used.\n- Cookies & Tracking Technologies: see Section 6 (Cookies).\n\n## How We Use Your Information\n\nWe use the information we collect to:\n\n- Provide, maintain, and improve our Website and services.\n- Respond to inquiries and communicate with you.\n- Monitor Website usage and detect, prevent, or address technical issues.\n- Comply with legal obligations and protect our rights.\n\n## Legal Basis for Processing\n\nWe process your personal information based on:\n\n- Consent (e.g., when accepting cookies).\n- Performance of a contract (when you engage with us as a customer).\n- Legitimate interests (e.g., to ensure Website security).\n- Legal obligations (e.g., tax or regulatory requirements).\n\n## Data Security\n\nWe implement appropriate technical and organizational measures to protect your information, including:\n\n- Encryption of sensitive information.\n- Access controls restricting data access to authorized personnel.\n- Regular security reviews in line with industry best practices.\n\n## Data Sharing & Disclosure\n\nWe do not sell or rent your personal information. We may share it with:\n\n- **Service Providers:** third parties that support our Website and services, bound by confidentiality and data protection agreements.\n- **Legal Authorities:** when required by law or to respond to lawful requests.\n\n## Cookies\n\nOur Website uses cookies and similar technologies to improve your browsing experience.\n\n- **Essential cookies:** required for the Website to function.\n- **Analytics cookies:** help us understand how visitors use the Website. With your consent, we use:\n  - **Google Analytics 4** (provided by Google LLC) for traffic and event measurement. We record interactions such as page views, clicks on \"Book a demo\" buttons, video plays of our product tour and successful demo bookings. We never send Google personal data we sell or share with advertisers; advertising signals (`ad_storage`, `ad_user_data`, `ad_personalization`) are kept off via Google Consent Mode v2.\n  - **Microsoft Clarity** (provided by Microsoft Corporation) for anonymised session recordings and heatmaps. We attach non-identifying tags to sessions (such as the page type and the portfolio size you selected on the demo page) so we can filter recordings, but we do not pass your name, email or phone number to Clarity.\n- **Preference cookies:** remember your choices (e.g., language).\n\nWhen you complete a demo booking on `/book-a-demo`, our website may also send Google Analytics 4 a SHA-256 hash of your email address. The hash is computed in your browser before transmission, so Google never receives your raw email. This is used solely to measure that the booking happened (a feature Google calls \"enhanced conversions\") and is only sent when you have accepted analytics cookies. The actual booking content (your name, email, scheduled time and any meeting notes) is processed by HubSpot, Inc. under a separate data processing agreement, independently of the cookie banner.\n\nAnalytics cookies are only set after you accept them via the cookie banner. You can withdraw consent at any time by reopening the cookie preferences from the banner, which also erases the analytics cookies that were already set. You can additionally control cookies through your browser settings.\n\n## Data Retention\n\nWe retain your personal information only for as long as necessary to fulfil the purposes described in this Policy or as required by law.\n\n## Your Rights\n\nUnder GDPR, you have the right to:\n\n- Access and obtain a copy of your personal data.\n- Request correction of inaccurate or incomplete data.\n- Request deletion of your personal data, subject to legal obligations.\n- Object to processing based on legitimate interests.\n- Withdraw consent at any time (where processing is based on consent).\n\nRequests may be made by contacting us at [gdpr.support@guestway.io](mailto:gdpr.support@guestway.io).\n\n## Changes to this Policy\n\nWe may update this Policy from time to time. Any changes will be posted on this page with an updated effective date.\n\n## Contact Us\n\n### Guestway BV\n\nSoenenspark 1, 9051 Ghent, Belgium\n\nEmail: [gdpr.support@guestway.io](mailto:gdpr.support@guestway.io)"
+    },
+    {
+      "slug": "terms",
+      "title": "Terms & Conditions",
+      "url": "https://guestway.io/terms",
+      "effectiveDate": "September 17, 2025",
+      "version": "2025.09",
+      "listed": true,
+      "markdown": "These Terms & Conditions (\"Terms\") govern access to and use of the Guestway website ([guestway.io](https://guestway.io)) (\"Website\"). By using the Website, you agree to these Terms. If you do not agree, you should not use the Website.\n\n## Use of the Website\n\n- The Website is provided for informational purposes only.\n- You may not misuse the Website, attempt unauthorized access, or interfere with its operation.\n- You are responsible for ensuring that your use complies with applicable laws.\n\n## Intellectual Property\n\n- All content on the Website (including text, images, logos, software, and design) is owned by or licensed to Guestway BV.\n- You may view and print content for personal, non-commercial use only.\n- You may not reproduce, distribute, or modify Website content without Guestway's prior written consent.\n\n## No Offer or Warranty\n\n- Information on the Website is for general information only and does not constitute an offer, guarantee, or professional advice.\n- Guestway strives for accuracy but makes no warranties regarding the Website's content, availability, or fitness for a particular purpose.\n\n## Links to Third Parties\n\nThe Website may include links to third-party websites. Guestway is not responsible for the content, availability, or practices of those third parties.\n\n## Limitation of Liability\n\nTo the maximum extent permitted by law:\n\n- Guestway shall not be liable for any indirect, incidental, or consequential damages arising from the use of the Website.\n- Guestway's total liability for direct damages is limited to €100.\n\n## Privacy & Cookies\n\nUse of personal data via the Website is governed by Guestway's [Privacy & Cookie Policy](/privacy), available on the Website.\n\n## Governing Law & Jurisdiction\n\nThese Terms are governed by Belgian law. The courts of Ghent, Belgium have exclusive jurisdiction over disputes related to the Website.\n\n### Guestway BV\n\nSoenenspark 1, 9051 Ghent, Belgium\n\nGeneral inquiries: [info@guestway.io](mailto:info@guestway.io)"
+    }
+  ]
+}

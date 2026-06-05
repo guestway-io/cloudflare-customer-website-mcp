@@ -103,6 +103,10 @@ export function registerSolutionTools(server: McpServer, env: Env): void {
           description: solution.menu.description,
           url: solution.url,
           seo: solution.seo,
+          intro: solution.intro,
+          stories: solution.stories,
+          capabilities: solution.capabilities,
+          related: solution.related,
           faqs: relatedFaqs,
         });
       }),

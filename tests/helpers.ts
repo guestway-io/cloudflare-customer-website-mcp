@@ -33,6 +33,11 @@ function fixtureFor(path: string): { file: string; type: string } | null {
       type: 'application/json',
     },
     '/data/catalog.json': { file: 'catalog.json', type: 'application/json' },
+    '/data/testimonials.json': {
+      file: 'testimonials.json',
+      type: 'application/json',
+    },
+    '/data/legal.json': { file: 'legal.json', type: 'application/json' },
     '/llms.txt': { file: 'llms.txt', type: 'text/plain' },
     '/.well-known/api-catalog': {
       file: 'api-catalog',

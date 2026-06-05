@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-06-05T14:37:04.057Z",
+  "source": "https://guestway.io/",
+  "total": 5,
+  "testimonials": [
+    {
+      "author": "David Bekaert",
+      "company": "Xepa",
+      "role": "Single-unit short-term rentals",
+      "featured": true,
+      "quote": "Our 120 apartments are sprinkled all over multiple cities, so coordinating cleaners, keys and guest questions used to chew up our day.\n\nGuestway stitched the puzzle together: one dashboard routes tasks to the nearest staffer, smart-lock codes sync automatically, and the AI inbox resolves most messages before we even see them.\n\nWe've cut travel time in half, responded so much faster, and guest ratings jumped to 4.9 / 5, all without adding head-count."
+    },
+    {
+      "author": "Fabienne Verschelde",
+      "company": "Raibu",
+      "role": "Apart-hotels",
+      "featured": false,
+      "quote": "Guestway ties our guest communication, smart locks and reviews together in one sleek dashboard.\n\nSince switching, front-desk calls have dropped by more than 50%, exactly the operational lift we needed to scale profitably."
+    },
+    {
+      "author": "Maarten",
+      "company": "Apartments Carvoeiro",
+      "role": "Short-term rentals",
+      "featured": false,
+      "quote": "Hosting on Booking.com, Airbnb and my own website, I needed one tool for guest communication and daily ops. Guestway has genuinely simplified both.\n\nThe Unified AI Inbox pulls every channel into one place, AI suggested replies save hours each week, and automations handle the repetitive work. Highly recommended for hosts who want to streamline operations."
+    },
+    {
+      "author": "Aleksandra Zakharova",
+      "company": "Charlie M",
+      "role": "Short-term rentals",
+      "featured": false,
+      "quote": "Guestway brings everything into one place and makes running our property much simpler, no need to switch between different systems.\n\nBut what really stands out is the support. Anytime we have a question, the team responds incredibly fast and actually takes the time to help. They're proactive, friendly, and you can tell they genuinely care about improving the product."
+    },
+    {
+      "author": "Simon",
+      "company": "Lindgold",
+      "role": "Short-term rentals",
+      "featured": false,
+      "quote": "Guestway has exceeded our expectations in every respect. We carefully evaluated every product on the market and previously used a significantly more expensive solution.\n\nWith Guestway we finally found one that actually saves us time and increases guest satisfaction."
+    }
+  ]
+}

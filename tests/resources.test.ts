@@ -70,6 +70,31 @@ describe('resources', () => {
     expect(Array.isArray(data.faqs)).toBe(true);
     await close();
   });
+
+  it('testimonials resource returns the feed', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.readResource({ uri: 'guestway://testimonials' });
+    const data = JSON.parse(firstText(res as any));
+    expect(data.total).toBe(5);
+    await close();
+  });
+
+  it('legal/privacy returns full markdown text', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.readResource({ uri: 'guestway://legal/privacy' });
+    expect(res.contents[0].mimeType).toBe('text/markdown');
+    expect(firstText(res as any)).toMatch(/Guestway BV/);
+    await close();
+  });
+
+  it('legal/dpa is contract-only: pointer, no body', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.readResource({ uri: 'guestway://legal/dpa' });
+    const data = JSON.parse(firstText(res as any));
+    expect(data.slug).toBe('dpa');
+    expect(data.note).toMatch(/Contract-only/);
+    await close();
+  });
 });
 
 describe('prompts', () => {

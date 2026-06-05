@@ -4,11 +4,10 @@
  * by data the marketing site actually publishes as machine-readable text/JSON,
  * so nothing returns invented or HTML-scraped content.
  *
- * Not yet exposed (needs a site-side feed first; tracked as follow-up):
- *   - guestway://testimonials  — quotes live inside solutions YAML, not in the
- *     slim /data/solutions.json projection.
- *   - full legal text          — /privacy etc. render HTML only; no .md/.json
- *     endpoint exists yet, so guestway://legal returns canonical pointers.
+ * Every resource is backed by a published feed: solutions/faq/integrations/
+ * industries/testimonials as JSON and legal Privacy/Terms as markdown. The
+ * contract-only DPA/MSA expose metadata + canonical link (no body), mirroring
+ * the site's sitemap/llms.txt exclusion of those documents.
  */
 
 import { ResourceTemplate } from '@modelcontextprotocol/sdk/server/mcp.js';
@@ -20,9 +19,11 @@ import {
   getFaqFeed,
   getIndustriesFeed,
   getIntegrationsFeed,
+  getLegalFeed,
   getLlmsTxt,
   getSkill,
   getSolutionsFeed,
+  getTestimonialsFeed,
   type SkillSlug,
 } from '../lib/data';
 
@@ -278,32 +279,69 @@ export function registerResources(server: McpServer, env: Env): void {
     },
   );
 
-  // ---- Legal (pointers; HTML-only pages, no machine-readable text yet) -----
+  // ---- Testimonials --------------------------------------------------------
+  server.registerResource(
+    'testimonials',
+    'guestway://testimonials',
+    {
+      title: 'Customer testimonials',
+      description:
+        'Customer quotes shown on the homepage, with author, company, segment ' +
+        'and full verbatim quote text.',
+      mimeType: 'application/json',
+    },
+    async (uri) => jsonContents(uri.href, await getTestimonialsFeed(env)),
+  );
+
+  // ---- Legal ---------------------------------------------------------------
   server.registerResource(
     'legal',
     'guestway://legal',
     {
-      title: 'Legal documents (canonical links)',
+      title: 'Legal documents',
       description:
-        'Canonical URLs for Guestway\'s legal documents. Full text renders as ' +
-        'HTML on the site; there is no markdown/JSON endpoint to inline here.',
+        'Legal documents index. Public Privacy and Terms ship full markdown; ' +
+        'contract-only DPA and MSA expose metadata + canonical link only.',
       mimeType: 'application/json',
     },
-    async (uri) =>
-      jsonContents(uri.href, {
-        documents: [
-          { name: 'Privacy Policy', url: 'https://guestway.io/privacy' },
-          { name: 'Terms of Service', url: 'https://guestway.io/terms' },
-          {
-            name: 'Data Processing Agreement',
-            url: 'https://guestway.io/contract-terms/dpa',
-          },
-          {
-            name: 'Master Service Agreement',
-            url: 'https://guestway.io/contract-terms/msa',
-          },
-        ],
-      }),
+    async (uri) => jsonContents(uri.href, await getLegalFeed(env)),
+  );
+
+  server.registerResource(
+    'legal-doc',
+    new ResourceTemplate('guestway://legal/{slug}', {
+      list: async () => {
+        const feed = await getLegalFeed(env);
+        return {
+          resources: feed.documents.map((d) => ({
+            uri: `guestway://legal/${d.slug}`,
+            name: d.title,
+            mimeType: d.markdown ? 'text/markdown' : 'application/json',
+          })),
+        };
+      },
+    }),
+    {
+      title: 'Legal document',
+      description:
+        'A single legal document by slug (privacy, terms, dpa, msa). Returns ' +
+        'full markdown for public docs; a metadata pointer for contract-only ' +
+        'docs.',
+      mimeType: 'text/markdown',
+    },
+    async (uri, { slug }) => {
+      const feed = await getLegalFeed(env);
+      const doc = feed.documents.find((d) => d.slug === slug);
+      if (!doc) return jsonContents(uri.href, { error: `Unknown doc "${slug}"` });
+      if (doc.markdown) return textContents(uri.href, doc.markdown, 'text/markdown');
+      return jsonContents(uri.href, {
+        slug: doc.slug,
+        title: doc.title,
+        url: doc.url,
+        effectiveDate: doc.effectiveDate,
+        note: 'Contract-only document. Full text is provided on request, not in this feed.',
+      });
+    },
   );
 
   // ---- Agent skills --------------------------------------------------------
