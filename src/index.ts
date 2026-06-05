@@ -17,6 +17,7 @@ import { McpAgent } from 'agents/mcp';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { createServer } from './server';
 import { buildCapabilities, MCP_ENDPOINT } from './well-known/capabilities';
+import { buildServerCard, SERVER_CARD_PATHS } from './well-known/server-card';
 
 export class GuestwayMCP extends McpAgent<Env> {
   // Real server is built in init() once env is available; this placeholder
@@ -57,6 +58,17 @@ export default {
     if (url.pathname === '/.well-known/mcp-capabilities.json') {
       return Response.json(buildCapabilities(url.origin), {
         headers: { 'cache-control': 'public, max-age=3600' },
+      });
+    }
+
+    // MCP Server Card (SEP-1649/2127). Served at every known path variant with
+    // a permissive CORS header so browser-based MCP clients can fetch it.
+    if (SERVER_CARD_PATHS.includes(url.pathname)) {
+      return Response.json(buildServerCard(url.origin), {
+        headers: {
+          'cache-control': 'public, max-age=3600',
+          'access-control-allow-origin': '*',
+        },
       });
     }
 

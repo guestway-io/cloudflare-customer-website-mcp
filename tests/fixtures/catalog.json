@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T14:37:04.051Z",
+  "generatedAt": "2026-06-05T15:28:47.886Z",
   "site": "https://guestway.io",
   "feeds": [
     {
@@ -95,6 +95,11 @@
       "name": "app-login",
       "url": "https://app.guestway.io/login",
       "description": "Customer application sign-in. Behind auth, not crawlable."
+    },
+    {
+      "name": "mcp",
+      "url": "https://public-mcp.guestway.io/mcp",
+      "description": "Model Context Protocol server (Streamable HTTP, no auth) exposing solutions, FAQs, integrations, industries, testimonials and company info as tools and resources. Capability descriptor at https://public-mcp.guestway.io/.well-known/mcp-capabilities.json."
     }
   ],
   "apps": [

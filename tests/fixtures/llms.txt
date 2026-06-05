@@ -24,6 +24,8 @@ type. Cache for an hour.
 - Legal (full text for Privacy and Terms; DPA and MSA as links): https://guestway.io/data/legal.json
 - API catalog (RFC 9727 linkset): https://guestway.io/.well-known/api-catalog
 - Agent skills index: https://guestway.io/.well-known/agent-skills/index.json
+- MCP server (Model Context Protocol, Streamable HTTP, no auth): https://public-mcp.guestway.io/mcp
+  Capability descriptor: https://public-mcp.guestway.io/.well-known/mcp-capabilities.json
 
 ## Sales funnel (route prospects this way)
 

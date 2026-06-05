@@ -31,7 +31,6 @@ src/
                       solutions, industries, pricing, legal, skills)
   prompts/            route-question
   well-known/         capability descriptor
-  shims/ai.ts         stub for the agents package's optional `ai` peer dep
 tests/                vitest + in-memory MCP client, mocked fetch vs fixtures
 ```
 
@@ -94,22 +93,46 @@ or add it in the dashboard: Workers & Pages -> guestway-public-mcp ->
 Settings -> Domains & Routes -> Add custom domain -> `public-mcp.guestway.io`.
 Cloudflare issues the TLS cert automatically.
 
-## DNS-AID discovery record
+### Dashboard config (Domains & Routes) — current state
 
-After the custom domain is live, publish the DNS-AID SVCB record on the
-`guestway.io` zone so DNS-AID-aware agents can discover this MCP. In Cloudflare
-DNS (DNS only, grey cloud; the zone must have DNSSEC active):
+- **Custom Domain**: `public-mcp.guestway.io` — the one canonical endpoint.
+- **Worker URL** (`*.workers.dev`): **disabled**. We don't want the MCP
+  reachable at a second public URL; the capability descriptor and the
+  DNS-AID record both point at the custom domain, and the `workers.dev`
+  hostname would bypass any zone-level config attached to the custom domain.
+- **Preview URLs**: **disabled** — we don't use per-version preview hostnames
+  for this service.
+
+If you re-enable either toggle later, remember the MCP becomes reachable at
+multiple URLs; keep the custom domain authoritative.
+
+## DNS-AID discovery records
+
+Published on the `guestway.io` zone (DNS only, no proxy; the zone has DNSSEC
+active) so DNS-AID-aware agents can discover the MCP and the discovery layer.
+Custom `cap=` / `mandatory=` SvcParams are intentionally omitted — Cloudflare's
+SVCB editor does not reliably accept them, and they are not needed: an agent
+follows the SVCB target and reads the well-known descriptor by convention.
 
 ```
-_mcp._agents.guestway.io.  600  IN  SVCB  1 public-mcp.guestway.io. (
-    alpn="h2"
-    port=443
-    mandatory=alpn,port
-)
+; The MCP server
+_mcp._agents.guestway.io.    3600 IN SVCB 1 public-mcp.guestway.io. alpn="h2" port=443
+
+; The discovery entrypoint (serves /.well-known/api-catalog, /llms.txt, agent-skills)
+_index._agents.guestway.io.  3600 IN SVCB 1 guestway.io.            alpn="h2" port=443
 ```
 
-An agent then follows the SVCB target to `public-mcp.guestway.io`, reads
-`/.well-known/mcp-capabilities.json`, and connects to `/mcp`.
+An agent follows `_mcp._agents` to `public-mcp.guestway.io`, reads
+`/.well-known/mcp-capabilities.json`, and connects to `/mcp`. The `_index`
+record points at the marketing site's discovery layer.
+
+Verify:
+
+```bash
+dig +short SVCB _mcp._agents.guestway.io
+dig +short SVCB _index._agents.guestway.io
+dig +dnssec _mcp._agents.guestway.io | grep -E 'flags:|ad'   # expect the 'ad' flag
+```
 
 ## Surface (V1)
 
