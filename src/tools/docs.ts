@@ -24,6 +24,10 @@ function expandDocsQuery(query: string): string {
   let q = query;
   if (/\bnest\b/i.test(q)) q += ' google nest google-nest smart thermostat';
   if (/\bbooking\.?com\b/i.test(q)) q += ' booking.com booking-com ota';
+  if (/\b(review|satisfaction|nps)\b/i.test(q)) {
+    q += ' automations satisfaction score review request guest journey';
+  }
+  if (/\bautomation/i.test(q)) q += ' automations guest message schedule condition';
   return q;
 }
 
@@ -120,6 +124,70 @@ export function registerDocsTool(server: McpServer, env: Env): void {
             return fail(
               'Academy article fetch timed out. Retry get_doc; if it persists, ' +
                 'open the URL in a browser or contact info@guestway.io.',
+            );
+          }
+          return fail(msg);
+        }
+      }),
+  );
+
+  server.registerTool(
+    'ask_doc',
+    {
+      title: 'Ask a question against one Academy article',
+      description:
+        'Query a single Guestway Academy page with a natural-language question. ' +
+        'Uses the GitBook ?ask= endpoint on the article .md URL. Prefer this ' +
+        'when get_doc returned a long page but you need one specific answer ' +
+        '(e.g. "automation review request only if satisfied"). Pass the same ' +
+        '.md URL from search_docs or setupDocUrl.',
+      inputSchema: {
+        url: z
+          .string()
+          .min(4)
+          .describe(
+            'Academy .md URL or site-relative path (same as get_doc).',
+          ),
+        question: z
+          .string()
+          .min(4)
+          .describe('Specific question to answer from that page.'),
+      },
+    },
+    async ({ url, question }) =>
+      guard(async () => {
+        try {
+          const resolved = resolveDocUrl(env, url);
+          const askUrl = `${resolved}?ask=${encodeURIComponent(question)}`;
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 20_000);
+          try {
+            const res = await fetch(askUrl, {
+              signal: controller.signal,
+              headers: { accept: 'text/markdown, text/plain;q=0.9' },
+            });
+            if (!res.ok) {
+              return fail(
+                `Academy ask failed (${res.status}) for ${resolved}. ` +
+                  'Try get_doc on the full article instead.',
+              );
+            }
+            const answer = await res.text();
+            return ok({
+              url: resolved,
+              question,
+              answer,
+              note:
+                'Sourced via Academy ?ask=. For the full article body, call get_doc.',
+            });
+          } finally {
+            clearTimeout(timeout);
+          }
+        } catch (e) {
+          const msg = e instanceof Error ? e.message : String(e);
+          if (e instanceof Error && e.name === 'AbortError') {
+            return fail(
+              'Academy ask timed out. Retry ask_doc or use get_doc on the full page.',
             );
           }
           return fail(msg);

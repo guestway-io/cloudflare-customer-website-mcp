@@ -35,6 +35,8 @@ export function buildCapabilities(origin: string) {
       'get_testimonials',
       'search_docs',
       'get_doc',
+      'ask_doc',
+      'get_changelog',
       'route_question',
     ],
     resources: [

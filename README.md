@@ -27,7 +27,7 @@ src/
   tools/              search_faq, find_related_faqs, search_solutions,
                       get_solution, search_integrations, get_integration,
                       get_company_info, get_testimonials, search_docs,
-                      get_doc, route_question
+                      get_doc, ask_doc, get_changelog, route_question
   lib/integration-docs.ts  maps marketing integration slugs -> Academy URLs
   resources/          guestway:// URIs (overview, catalog, faq, integrations,
                       solutions, industries, testimonials, pricing, legal, skills)
@@ -140,14 +140,17 @@ dig +dnssec _mcp._agents.guestway.io | grep -E 'flags:|ad'   # expect the 'ad' f
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| Resource read fails for `nest` | Resources use `guestway://integrations/nest`, not a bare slug | Read the full URI or call `get_integration` |
+| Resource read fails for `nest` (old clients) | Was: bare slug crashed `new URL()` in the SDK | Fixed: bare slugs resolve to `guestway://integrations/{slug}`; prefer full URI or `get_integration` |
 | `search_faq("connect Nest")` returns nothing | FAQs are pre-sales; setup lives in the Academy | `search_docs` → `get_doc`, or `get_integration` → `setupDocUrl` |
 | Agent guesses Academy URLs and 404s | Paths are not predictable (`nest` → `google-nest.md`) | Use `setupDocUrl` / `search_docs`, never invent paths |
-| Slow or empty off-MCP `?ask=` on GitBook | Optional GitBook query API; can time out | Use MCP `get_doc` on the `.md` URL instead |
+| Slow or empty off-MCP `?ask=` on GitBook | Optional GitBook query API; can time out | Use MCP `ask_doc` (same API, server-side timeout) or `get_doc` |
+| `get_integration("google-nest")` 404s | Marketing slug is `nest`, not the Academy path segment | Alias resolves automatically; or call `search_integrations` |
+| Changelog questions | `route_question` only pointed at a URL | Call `get_changelog` for recent release notes |
+| SSE "Internal Server Error" on reconnect | Streamable HTTP + Durable Object session after idle | Usually transient; toggle MCP off/on in Cursor or retry. Persistent failures: check Worker logs in Cloudflare dashboard. |
 
 ## Surface
 
-11 tools, ~16 resource patterns (templates expand per item), 1 prompt. All
+13 tools, ~16 resource patterns (templates expand per item), 1 prompt. All
 read-only, no auth. The server also sends `instructions` on connect (call-order
 guidance + read-only scope). See `/.well-known/mcp-capabilities.json` for the
 live inventory.
@@ -169,7 +172,7 @@ steps for Claude / Cursor / ChatGPT, linked from the footer next to the
 - `get_demo_availability` + `prepare_demo_booking` (HubSpot Scheduler API read
   + pre-filled browser-handoff booking URL, no server-side write);
   `assess-fit`, `objection-handle`, `compare-to-pms-stack` prompts.
-- `get_recent_changes` (changelog), `get_system_status` (status page).
+- `get_system_status` (status page; use `route_question` → status.guestway.io today).
 - `guestway://pricing` remains FAQ-backed by design (no machine-published
   price list; agents are routed to a demo for exact quotes).
 

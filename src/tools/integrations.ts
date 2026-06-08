@@ -2,6 +2,7 @@ import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { getDocsIndex, getIntegrationsFeed } from '../lib/data';
 import { findIntegrationSetupDoc } from '../lib/integration-docs';
+import { resolveIntegrationSlug } from '../lib/integration-slugs';
 import { rank } from '../lib/search';
 import { ok, fail, guard } from '../lib/respond';
 import type { Integration } from '../types/feeds';
@@ -123,16 +124,24 @@ export function registerIntegrationTools(server: McpServer, env: Env): void {
       guard(async () => {
         const feed = await getIntegrationsFeed(env);
         const all = flatten(feed);
-        const found = all.find((i) => i.slug === slug);
+        const canonical = resolveIntegrationSlug(slug);
+        const found = all.find((i) => i.slug === canonical);
         if (!found) {
+          const hint =
+            canonical !== slug
+              ? ` (resolved from "${slug}")`
+              : '';
           return fail(
-            `No integration with slug "${slug}". Use search_integrations to ` +
-              `find the correct slug (there are ${feed.total} systems).`,
+            `No integration with slug "${canonical}"${hint}. Use ` +
+              `search_integrations to find the correct slug (there are ` +
+              `${feed.total} systems). Marketing slug for Google Nest is ` +
+              `"nest", not "google-nest".`,
           );
         }
         const setup = await setupDocFields(env, found.slug, found.name);
         return ok({
           slug: found.slug,
+          ...(canonical !== slug ? { resolvedFrom: slug } : {}),
           name: found.name,
           category: found.category,
           categoryLabel: found.categoryLabel,

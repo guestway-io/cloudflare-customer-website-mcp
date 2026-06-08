@@ -6,13 +6,15 @@ describe('tools', () => {
   beforeEach(() => mockFetch());
   afterEach(() => vi.unstubAllGlobals());
 
-  it('lists exactly the 11 tools', async () => {
+  it('lists exactly the 13 tools', async () => {
     const { client, close } = await connectClient();
     const { tools } = await client.listTools();
     const names = tools.map((t) => t.name).sort();
     expect(names).toEqual(
       [
+        'ask_doc',
         'find_related_faqs',
+        'get_changelog',
         'get_company_info',
         'get_doc',
         'get_integration',
@@ -53,6 +55,32 @@ describe('tools', () => {
     expect(data.slug).toBe('nest');
     expect(data.setupDocUrl).toMatch(/google-nest\.md$/);
     expect(data.setupDocTitle).toMatch(/Google Nest/i);
+    await close();
+  });
+
+  it('get_integration resolves google-nest alias to nest', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'get_integration',
+      arguments: { slug: 'google-nest' },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.slug).toBe('nest');
+    expect(data.resolvedFrom).toBe('google-nest');
+    await close();
+  });
+
+  it('ask_doc returns an answer from the Academy ask endpoint', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'ask_doc',
+      arguments: {
+        url: 'integrations/smart-thermostats/google-nest',
+        question: 'How do I connect Google Nest?',
+      },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.answer).toMatch(/Organization Settings|Integrations/i);
     await close();
   });
 
@@ -234,6 +262,18 @@ describe('tools', () => {
     expect(data.legalName).toBe('Guestway BV');
     expect(data.apps.length).toBe(2);
     expect(data.socials.map((s: any) => s.name)).toContain('LinkedIn');
+    await close();
+  });
+
+  it('get_changelog returns a recent-month excerpt', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'get_changelog',
+      arguments: { months: 1 },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.excerpt).toMatch(/May 2026/);
+    expect(data.excerpt).not.toMatch(/March 2026/);
     await close();
   });
 

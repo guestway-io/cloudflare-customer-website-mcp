@@ -11,9 +11,11 @@ import { registerIntegrationTools } from './tools/integrations';
 import { registerCompanyTool } from './tools/company';
 import { registerTestimonialTool } from './tools/testimonials';
 import { registerDocsTool } from './tools/docs';
+import { registerChangelogTool } from './tools/changelog';
 import { registerRouteTool } from './tools/route';
 import { registerResources } from './resources/index';
 import { registerPrompts } from './prompts/index';
+import { patchResourceReadHandler } from './lib/patch-resource-read';
 
 /**
  * Sent to clients in the initialize result. Steers a fresh agent toward the
@@ -25,8 +27,9 @@ const SERVER_INSTRUCTIONS = `Guestway public MCP: read-only access to Guestway's
 How to use:
 - Pre-sales / "does Guestway do X?": call search_faq first, then get_solution for module depth.
 - "Is <system> integrated?": ALWAYS call search_integrations or get_integration; never assert integration status from memory.
-- In-app setup ("how do I connect Nest / Mews / a lock"): get_integration (check setupDocUrl) or search_docs, then get_doc on the returned .md URL. Do not use search_faq for step-by-step setup; do not guess docs.guestway.io paths.
-- Resources use guestway:// URIs (e.g. guestway://integrations/nest), not bare slugs.
+- In-app setup ("how do I connect Nest / Mews / a lock"): get_integration (check setupDocUrl) or search_docs, then get_doc or ask_doc on the returned .md URL. Do not use search_faq for step-by-step setup; do not guess docs.guestway.io paths.
+- Resources use guestway:// URIs (e.g. guestway://integrations/nest). Bare slugs like "nest" are accepted as a fallback but tools are clearer.
+- "What shipped recently" / changelog: get_changelog. Live incidents: route_question → status.guestway.io.
 - Pricing: there is no pricing tool by design; route the user to https://guestway.io/pricing or a demo. Never invent prices.
 - Status, careers, partnerships, or account-specific support: call route_question (status page, support email, etc.).
 - Company / apps / socials: get_company_info. Testimonials: get_testimonials (quote verbatim, do not paraphrase as a quote).
@@ -47,8 +50,10 @@ export function createServer(env: Env): McpServer {
   registerCompanyTool(server, env);
   registerTestimonialTool(server, env);
   registerDocsTool(server, env);
+  registerChangelogTool(server);
   registerRouteTool(server, env);
   registerResources(server, env);
   registerPrompts(server, env);
+  patchResourceReadHandler(server);
   return server;
 }

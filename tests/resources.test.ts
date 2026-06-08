@@ -43,6 +43,15 @@ describe('resources', () => {
     await close();
   });
 
+  it('accepts a bare integration slug (client mistake)', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.readResource({ uri: 'nest' });
+    const data = JSON.parse(firstText(res as any));
+    expect(data.slug).toBe('nest');
+    expect(data.setupDocUrl).toMatch(/google-nest\.md$/);
+    await close();
+  });
+
   it('reads a single FAQ category via the template', async () => {
     const { client, close } = await connectClient();
     const res = await client.readResource({ uri: 'guestway://faq/pricing' });

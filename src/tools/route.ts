@@ -36,13 +36,24 @@ export function registerRouteTool(server: McpServer, env: Env): void {
     async ({ question }) =>
       guard(async () => {
         const table = await getSkill(env, 'resource-routing');
-        return ok({
+        const payload: Record<string, unknown> = {
           question,
           routingGuide: table,
           note:
             'Match the question shape to a row in routingGuide, then use the ' +
             'matching tool or destination URL.',
-        });
+        };
+        if (
+          /changelog|shipped recently|what(?:'s| is) new|latest (?:feature|update)/i.test(
+            question,
+          )
+        ) {
+          payload.suggestedTool = 'get_changelog';
+        }
+        if (/status|down|degraded|outage|incident/i.test(question)) {
+          payload.suggestedUrl = 'https://status.guestway.io/';
+        }
+        return ok(payload);
       }),
   );
 }

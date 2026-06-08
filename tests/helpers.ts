@@ -36,7 +36,7 @@ function fixtureFor(
       return { file: 'docs-llms.txt', type: 'text/markdown' };
     }
     if (path.endsWith('.md')) {
-      const rel = path.replace(/^\//, '');
+      const rel = path.replace(/^\//, '').split('?')[0];
       return { file: `docs/${rel}`, type: 'text/markdown' };
     }
   }
@@ -99,6 +99,15 @@ export function mockFetch() {
       // Anything that isn't an absolute URL is not one of our feed loaders.
       return new Response('bad request', { status: 400 });
     }
+    if (parsed.hostname.includes('usepylon.com')) {
+      return new Response(
+        '<html><body><h2>May 2026</h2><p>New charges feature.</p>' +
+          '<h2>April 2026</h2><p>Journey editor refresh.</p>' +
+          '<h2>March 2026</h2><p>Older month.</p></body></html>',
+        { status: 200, headers: { 'content-type': 'text/html' } },
+      );
+    }
+
     const hit = fixtureFor(parsed.hostname, parsed.pathname);
     if (!hit) {
       return new Response('not found', { status: 404 });
