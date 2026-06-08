@@ -162,7 +162,7 @@ dig +dnssec _mcp._agents.guestway.io | grep -E 'flags:|ad'   # expect the 'ad' f
 | Slow or empty off-MCP `?ask=` on GitBook | Optional GitBook query API; can time out | Use MCP `ask_doc` (same API, server-side timeout) or `get_doc` |
 | `get_integration("google-nest")` 404s | Marketing slug is `nest`, not the Academy path segment | Alias resolves automatically; or call `search_integrations` |
 | Changelog questions | `route_question` only pointed at a URL | Call `get_changelog` for recent release notes |
-| SSE "Internal Server Error" on reconnect | Streamable HTTP + Durable Object session after idle | Usually transient; toggle MCP off/on in Cursor or retry. Persistent failures: check Worker logs in Cloudflare dashboard. |
+| SSE error ~5–7 min after connect, no interaction | Cloudflare edge closes idle SSE; agents omits keepalive on standalone GET | Fixed in Worker: `withSseKeepalive()` on GET `text/event-stream` responses. Deploy latest Worker, then reconnect MCP in Cursor. |
 
 ## Surface
 

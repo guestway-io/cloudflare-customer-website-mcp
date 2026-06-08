@@ -17,6 +17,10 @@
 import { McpAgent } from 'agents/mcp';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { createServer } from './server';
+import {
+  isStandaloneMcpSse,
+  withSseKeepalive,
+} from './lib/sse-keepalive';
 import { buildCapabilities, MCP_ENDPOINT } from './well-known/capabilities';
 import { ICON_ASSET_PATHS } from './well-known/icons';
 import { buildServerCard, SERVER_CARD_PATHS } from './well-known/server-card';
@@ -54,7 +58,17 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === MCP_ENDPOINT || url.pathname.startsWith(`${MCP_ENDPOINT}/`)) {
-      return mcpHandler.fetch(request, env, ctx);
+      const response = await mcpHandler.fetch(request, env, ctx);
+      // Standalone GET SSE has no keepalive in agents@0.14.x; the edge
+      // watchdog drops idle listeners after ~5 minutes without this.
+      if (isStandaloneMcpSse(request, response) && response.body) {
+        return new Response(withSseKeepalive(response.body), {
+          status: response.status,
+          statusText: response.statusText,
+          headers: response.headers,
+        });
+      }
+      return response;
     }
 
     if (url.pathname === '/.well-known/mcp-capabilities.json') {
