@@ -23,7 +23,7 @@ import { buildServerIcons } from './well-known/icons';
  * right call order before it has seen any tool, and sets the read-only,
  * marketing-scope expectation so it does not try to mutate or fabricate.
  */
-const SERVER_INSTRUCTIONS = `Guestway public MCP: read-only access to Guestway's marketing surface (product modules, FAQs, integrations, industries, testimonials, company info) plus public Academy how-to docs. Guestway is an AI-native operating system for property managers and hospitality teams that sits on top of the PMS.
+const SERVER_INSTRUCTIONS = `Guestway Docs (public documentation MCP): read-only access to Guestway's marketing surface (product modules, FAQs, integrations, industries, testimonials, company info) plus public Academy how-to docs. Not a customer-account MCP. No login, no portfolio data. Guestway is an AI-native operating system for property managers and hospitality teams that sits on top of the PMS.
 
 How to use:
 - Pre-sales / "does Guestway do X?": call search_faq first, then get_solution for module depth.
@@ -41,7 +41,7 @@ export function createServer(env: Env, origin = 'https://public-mcp.guestway.io'
   const server = new McpServer(
     {
       name: 'guestway-public-mcp',
-      title: 'Guestway Public MCP',
+      title: 'Guestway Docs',
       version: '1.0.0',
       websiteUrl: 'https://guestway.io/mcp',
       icons: buildServerIcons(origin),

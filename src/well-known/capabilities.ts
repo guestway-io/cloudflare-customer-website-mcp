@@ -9,11 +9,11 @@ export const MCP_ENDPOINT = '/mcp';
 
 export function buildCapabilities(origin: string) {
   return {
-    name: 'Guestway Public MCP',
+    name: 'Guestway Docs',
     description:
-      'Read-only MCP server exposing Guestway\'s marketing surface: product ' +
-      'modules, FAQs, integrations, industries and company info, sourced live ' +
-      'from guestway.io. Includes a browser-handoff demo-booking flow.',
+      'Public, read-only documentation MCP for guestway.io and docs.guestway.io. ' +
+      'Not a customer-account MCP: no login and no access to your portfolio. ' +
+      'Includes a browser-handoff demo-booking flow.',
     provider: {
       name: 'Guestway BV',
       url: 'https://guestway.io',

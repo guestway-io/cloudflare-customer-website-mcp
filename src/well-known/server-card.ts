@@ -31,17 +31,17 @@ export function buildServerCard(origin: string) {
     version: '1.0',
     protocolVersion: '2025-06-18',
     name: 'io.guestway/public-mcp',
-    title: 'Guestway Public MCP',
+    title: 'Guestway Docs',
     description:
-      "Read-only Model Context Protocol server exposing Guestway's marketing " +
-      'surface: product modules, FAQs, integrations, industries, testimonials ' +
-      'and company info, sourced live from guestway.io. No authentication required.',
+      'Public, read-only documentation MCP for guestway.io and docs.guestway.io. ' +
+      'Ask about product modules, integrations, FAQs and Academy how-tos. ' +
+      'Not a customer-account MCP: no login, no API key, no access to your portfolio.',
     websiteUrl: 'https://guestway.io/mcp',
     documentationUrl: 'https://guestway.io/llms.txt',
     icons,
     serverInfo: {
       name: 'guestway-public-mcp',
-      title: 'Guestway Public MCP',
+      title: 'Guestway Docs',
       version: '1.0.0',
       websiteUrl: 'https://guestway.io/mcp',
       icons,

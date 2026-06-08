@@ -37,20 +37,25 @@ export class GuestwayMCP extends McpAgent<Env> {
 
 const mcpHandler = GuestwayMCP.serve(MCP_ENDPOINT);
 
-const INFO_PAGE = `Guestway Public MCP
-====================
+const INFO_PAGE = `Guestway Docs MCP
+=================
 
-This is a Model Context Protocol server. Point an MCP client at:
+Public, read-only documentation server for guestway.io and docs.guestway.io.
+Not a customer-account MCP. No login, no portfolio access.
+
+Point an MCP client at:
 
   POST ${MCP_ENDPOINT}   (Streamable HTTP transport)
+
+Install name: Guestway Docs
 
 Capability descriptor:
   /.well-known/mcp-capabilities.json
 
-It exposes Guestway's product modules, FAQs, integrations, industries and
+Covers product modules, FAQs, integrations, industries, Academy how-tos and
 company info, sourced live from https://guestway.io. Read-only, no auth.
 
-Docs: https://guestway.io/llms.txt
+Docs: https://guestway.io/mcp
 `;
 
 export default {
