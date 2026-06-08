@@ -274,6 +274,37 @@ describe('tools', () => {
     const data = parseToolJson(res as any);
     expect(data.excerpt).toMatch(/May 2026/);
     expect(data.excerpt).not.toMatch(/March 2026/);
+    expect(data.excerpt).not.toMatch(/Related Articles/);
+    expect(data.excerpt).not.toMatch(/Powered by Pylon/);
+    await close();
+  });
+
+  it('search_docs ranks Automations for satisfaction review automation queries', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'search_docs',
+      arguments: {
+        query: 'automation review request only if satisfied guest',
+        limit: 5,
+      },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.results[0].title).toBe('Automations');
+    expect(data.results[0].url).toMatch(/\/automations\.md$/);
+    await close();
+  });
+
+  it('get_doc suggests ask_doc on long Academy pages', async () => {
+    const { client, close } = await connectClient();
+    const res = await client.callTool({
+      name: 'get_doc',
+      arguments: {
+        url: 'settings/organization-settings/automations',
+      },
+    });
+    const data = parseToolJson(res as any);
+    expect(data.charCount).toBeGreaterThan(8000);
+    expect(data.note).toMatch(/ask_doc/i);
     await close();
   });
 

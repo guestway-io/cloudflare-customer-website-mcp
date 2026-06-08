@@ -4,32 +4,9 @@ import {
   fetchDocMarkdown,
   getDocsIndex,
   resolveDocUrl,
-  type DocEntry,
 } from '../lib/data';
-import { rank } from '../lib/search';
+import { longDocNote, rankDocs } from '../lib/doc-search';
 import { fail, ok, guard } from '../lib/respond';
-
-function docHaystack(d: DocEntry): string {
-  let path = '';
-  try {
-    path = new URL(d.url).pathname.replace(/[/.-]/g, ' ');
-  } catch {
-    /* ignore */
-  }
-  return `${d.title} ${d.title} ${d.description} ${path}`;
-}
-
-/** Expand queries so marketing names match Academy URL segments. */
-function expandDocsQuery(query: string): string {
-  let q = query;
-  if (/\bnest\b/i.test(q)) q += ' google nest google-nest smart thermostat';
-  if (/\bbooking\.?com\b/i.test(q)) q += ' booking.com booking-com ota';
-  if (/\b(review|satisfaction|nps)\b/i.test(q)) {
-    q += ' automations satisfaction score review request guest journey';
-  }
-  if (/\bautomation/i.test(q)) q += ' automations guest message schedule condition';
-  return q;
-}
 
 export function registerDocsTool(server: McpServer, env: Env): void {
   server.registerTool(
@@ -64,7 +41,7 @@ export function registerDocsTool(server: McpServer, env: Env): void {
     async ({ query, limit }) =>
       guard(async () => {
         const index = await getDocsIndex(env);
-        const hits = rank(index, expandDocsQuery(query), docHaystack, limit);
+        const hits = rankDocs(index, query, limit);
         return ok({
           query,
           source: `${env.DOCS_URL.replace(/\/+$/, '')}/llms.txt`,
@@ -78,7 +55,8 @@ export function registerDocsTool(server: McpServer, env: Env): void {
           })),
           note:
             hits.length > 0
-              ? 'Call get_doc with the top result\'s url to read setup steps. ' +
+              ? 'Call get_doc with the top result\'s url to read setup steps, ' +
+                'or ask_doc when you need one specific answer from a long guide. ' +
                 'For account-specific issues docs do not resolve, contact info@guestway.io.'
               : 'No Academy article matched. Try a shorter query (brand name only) ' +
                 'or call route_question if the topic is support/status/careers.',
@@ -113,10 +91,13 @@ export function registerDocsTool(server: McpServer, env: Env): void {
             env,
             resolved,
           );
+          const charCount = markdown.length;
+          const note = longDocNote(charCount);
           return ok({
             url: fetchedUrl,
             markdown,
-            charCount: markdown.length,
+            charCount,
+            ...(note ? { note } : {}),
           });
         } catch (e) {
           const msg = e instanceof Error ? e.message : String(e);

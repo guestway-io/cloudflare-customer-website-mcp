@@ -100,12 +100,11 @@ export function mockFetch() {
       return new Response('bad request', { status: 400 });
     }
     if (parsed.hostname.includes('usepylon.com')) {
-      return new Response(
-        '<html><body><h2>May 2026</h2><p>New charges feature.</p>' +
-          '<h2>April 2026</h2><p>Journey editor refresh.</p>' +
-          '<h2>March 2026</h2><p>Older month.</p></body></html>',
-        { status: 200, headers: { 'content-type': 'text/html' } },
-      );
+      const body = readFileSync(join(FIXTURES, 'changelog-pylon.html'), 'utf8');
+      return new Response(body, {
+        status: 200,
+        headers: { 'content-type': 'text/html' },
+      });
     }
 
     const hit = fixtureFor(parsed.hostname, parsed.pathname);

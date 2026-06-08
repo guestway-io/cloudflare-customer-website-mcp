@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { processChangelogBody } from '../lib/changelog-text';
 import { ok, fail, guard } from '../lib/respond';
 
 /** Pylon knowledge base article linked from resource-routing skill. */
@@ -7,36 +8,6 @@ const CHANGELOG_URL =
   'https://guestway-knowledge-base.help.usepylon.com/articles/3167002633-changelog';
 
 const CHANGELOG_TIMEOUT_MS = 15_000;
-
-/** Strip HTML to plain text for agent consumption. */
-function htmlToText(html: string): string {
-  return html
-    .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/p>/gi, '\n\n')
-    .replace(/<\/h[1-6]>/gi, '\n\n')
-    .replace(/<li[^>]*>/gi, '\n- ')
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
-
-/** Keep the most recent N month sections from the changelog body. */
-function excerptRecentMonths(text: string, months: number): string {
-  const monthHeader = /(?:^|\n)(?:##\s+🗓\s*)?([A-Z][a-z]+ 20\d{2})/gm;
-  const indices: number[] = [];
-  for (const match of text.matchAll(monthHeader)) {
-    if (match.index !== undefined) indices.push(match.index);
-  }
-  if (indices.length <= months) return text;
-  const cut = indices[months] ?? text.length;
-  return text.slice(0, cut).trim();
-}
 
 export function registerChangelogTool(server: McpServer): void {
   server.registerTool(
@@ -75,8 +46,7 @@ export function registerChangelogTool(server: McpServer): void {
             );
           }
           const raw = await res.text();
-          const text = raw.includes('<html') ? htmlToText(raw) : raw;
-          const excerpt = excerptRecentMonths(text, months);
+          const excerpt = processChangelogBody(raw, months);
           return ok({
             source: CHANGELOG_URL,
             monthsIncluded: months,
