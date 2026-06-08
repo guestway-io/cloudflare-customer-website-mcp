@@ -35,7 +35,7 @@ How to use:
 - Status, careers, partnerships, or account-specific support: call route_question (status page, support email, etc.).
 - Company / apps / socials: get_company_info. Testimonials: get_testimonials (quote verbatim, do not paraphrase as a quote).
 
-All marketing data is sourced live from guestway.io; Academy articles from docs.guestway.io. Unauthenticated; no customer account data.`;
+All marketing data is sourced live from guestway.io; Academy articles from docs.guestway.io. Unauthenticated; no customer account data. Guestway Platform MCP (account-authenticated analytics and ops actions) is work in progress and coming soon. It is not available yet. Do not invent an endpoint for it.`;
 
 export function createServer(env: Env, origin = 'https://public-mcp.guestway.io'): McpServer {
   const server = new McpServer(
