@@ -10,6 +10,7 @@
  * Routes:
  *   /mcp                               → MCP endpoint (Streamable HTTP)
  *   /.well-known/mcp-capabilities.json → capability descriptor (DNS-AID target)
+ *   /icon.svg, /icon-{48,96,128}.png   → brand icons for MCP clients (SEP-973)
  *   /                                  → human-readable info page
  */
 
@@ -17,6 +18,7 @@ import { McpAgent } from 'agents/mcp';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { createServer } from './server';
 import { buildCapabilities, MCP_ENDPOINT } from './well-known/capabilities';
+import { ICON_ASSET_PATHS } from './well-known/icons';
 import { buildServerCard, SERVER_CARD_PATHS } from './well-known/server-card';
 
 export class GuestwayMCP extends McpAgent<Env> {
@@ -76,6 +78,14 @@ export default {
       return new Response(INFO_PAGE, {
         headers: { 'content-type': 'text/plain; charset=utf-8' },
       });
+    }
+
+    if (
+      ICON_ASSET_PATHS.includes(
+        url.pathname as (typeof ICON_ASSET_PATHS)[number],
+      )
+    ) {
+      return env.ASSETS.fetch(request);
     }
 
     return new Response('Not found', { status: 404 });

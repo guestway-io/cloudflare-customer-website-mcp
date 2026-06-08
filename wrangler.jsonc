@@ -12,6 +12,12 @@
   "observability": {
     "enabled": true
   },
+  // Brand icons for MCP clients (SEP-973). Served from the same origin as /mcp.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
   // McpAgent persists each MCP session in a Durable Object. SQLite-backed
   // classes are required for the agents framework's session store.
   "durable_objects": {

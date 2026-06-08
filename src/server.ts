@@ -16,6 +16,7 @@ import { registerRouteTool } from './tools/route';
 import { registerResources } from './resources/index';
 import { registerPrompts } from './prompts/index';
 import { patchResourceReadHandler } from './lib/patch-resource-read';
+import { buildServerIcons } from './well-known/icons';
 
 /**
  * Sent to clients in the initialize result. Steers a fresh agent toward the
@@ -36,11 +37,14 @@ How to use:
 
 All marketing data is sourced live from guestway.io; Academy articles from docs.guestway.io. Unauthenticated; no customer account data.`;
 
-export function createServer(env: Env): McpServer {
+export function createServer(env: Env, origin = 'https://public-mcp.guestway.io'): McpServer {
   const server = new McpServer(
     {
       name: 'guestway-public-mcp',
+      title: 'Guestway Public MCP',
       version: '1.0.0',
+      websiteUrl: 'https://guestway.io/mcp',
+      icons: buildServerIcons(origin),
     },
     { instructions: SERVER_INSTRUCTIONS },
   );

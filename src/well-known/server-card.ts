@@ -1,3 +1,5 @@
+import { buildServerIcons } from './icons';
+
 /**
  * MCP Server Card (SEP-1649 / SEP-2127). A static metadata document that lets
  * MCP clients discover and one-click-connect to this server without a full
@@ -23,6 +25,7 @@ export const SERVER_CARD_PATHS = [
 
 export function buildServerCard(origin: string) {
   const endpoint = `${origin}/mcp`;
+  const icons = buildServerIcons(origin);
   return {
     $schema: 'https://static.modelcontextprotocol.io/schemas/v1/server-card.schema.json',
     version: '1.0',
@@ -33,12 +36,15 @@ export function buildServerCard(origin: string) {
       "Read-only Model Context Protocol server exposing Guestway's marketing " +
       'surface: product modules, FAQs, integrations, industries, testimonials ' +
       'and company info, sourced live from guestway.io. No authentication required.',
-    websiteUrl: 'https://guestway.io/llms.txt',
+    websiteUrl: 'https://guestway.io/mcp',
     documentationUrl: 'https://guestway.io/llms.txt',
+    icons,
     serverInfo: {
       name: 'guestway-public-mcp',
       title: 'Guestway Public MCP',
       version: '1.0.0',
+      websiteUrl: 'https://guestway.io/mcp',
+      icons,
     },
     transport: {
       type: 'streamable-http',

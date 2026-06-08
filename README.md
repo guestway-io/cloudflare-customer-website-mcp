@@ -16,6 +16,7 @@ site deploy propagates here within ~5 minutes with no Worker redeploy.
 public-mcp.guestway.io
   /mcp                                MCP endpoint (Streamable HTTP, no auth)
   /.well-known/mcp-capabilities.json  capability descriptor (DNS-AID target)
+  /icon.svg, /icon-{48,96,128}.png   brand icons for MCP clients (SEP-973)
   /                                   plain-text info page
 
 src/
@@ -78,10 +79,25 @@ for s in guestway-overview resource-routing sales-faq book-demo; do
 done
 ```
 
+## MCP client icons
+
+Brand icons are generated from the marketing site's `favicon.svg` and committed
+under `public/`. Wrangler's `assets` binding serves them from the same origin
+as `/mcp` (required for clients that enforce same-origin icon trust). The
+`initialize` response and `/.well-known/mcp.json` server card both advertise:
+
+- `https://public-mcp.guestway.io/icon-96.png` (primary)
+- `https://public-mcp.guestway.io/icon-48.png`
+- `https://public-mcp.guestway.io/icon.svg`
+
+No manual Cloudflare upload is needed: `npm run deploy` ships the `public/`
+folder with the Worker. Cursor may still show a letter fallback until it
+renders SEP-973 icons in the MCP settings UI.
+
 ## Deploy
 
 ```bash
-npm run deploy       # wrangler deploy
+npm run deploy       # wrangler deploy (Worker + public/ assets)
 ```
 
 First deploy also needs the custom domain attached. Either uncomment the
