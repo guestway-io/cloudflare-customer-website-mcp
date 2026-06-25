@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "guestway",
+  "owner": {
+    "name": "Guestway BV",
+    "email": "info@guestway.io"
+  },
+  "metadata": {
+    "description": "Guestway plugins for Claude Code.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "guestway-docs",
+      "source": "./plugins/guestway-docs",
+      "description": "Ask Claude about Guestway: product modules, the 57 integrations and their live status, pre-sales FAQs, and Academy how-to docs. Connects to the public, read-only Guestway Docs MCP server (no login).",
+      "version": "1.0.0",
+      "author": {
+        "name": "Guestway BV",
+        "url": "https://guestway.io"
+      },
+      "homepage": "https://guestway.io/mcp",
+      "category": "documentation",
+      "tags": ["documentation", "hospitality", "property-management", "mcp", "guestway"]
+    }
+  ]
+}

@@ -4,6 +4,26 @@ Everything needed to list **Guestway Docs** in Anthropic's Connectors
 Directory so Claude users can add it in one click. The server is a public,
 read-only, no-auth remote MCP — the simplest category to get approved.
 
+## Two install channels (don't confuse them)
+
+| | Connectors Directory | Claude Code plugin marketplace |
+|---|---|---|
+| Audience | claude.ai / Desktop / mobile | Claude Code (terminal + IDE) |
+| Install | Browse connectors → one-click connect | `/plugin marketplace add …` → `/plugin install` |
+| Needs `marketplace.json`? | **No** — submit the URL via the form | **Yes** — `.claude-plugin/marketplace.json` (shipped in this repo) |
+| Anthropic review? | Yes | No (self-hosted from this repo) |
+
+This document covers the **Connectors Directory** route. The plugin route is
+already live in this repo: `.claude-plugin/marketplace.json` +
+`plugins/guestway-docs/`. Users install it with:
+
+```
+/plugin marketplace add guestway-io/cloudflare-customer-website-mcp
+/plugin install guestway-docs@guestway
+```
+
+The two are complementary — do both.
+
 ## Where to submit
 
 Two routes (pick whichever you can access):

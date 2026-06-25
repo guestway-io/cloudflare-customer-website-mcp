@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "guestway-docs",
+  "version": "1.0.0",
+  "description": "Ask Claude about Guestway: product modules, the 57 integrations and their live status, pre-sales FAQs, and Academy how-to docs. Connects to the public, read-only Guestway Docs MCP server (no login).",
+  "author": {
+    "name": "Guestway BV",
+    "url": "https://guestway.io"
+  },
+  "homepage": "https://guestway.io/mcp",
+  "license": "UNLICENSED",
+  "keywords": ["documentation", "hospitality", "property-management", "mcp"]
+}

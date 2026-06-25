@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "guestway-docs": {
+      "type": "http",
+      "url": "https://public-mcp.guestway.io/mcp"
+    }
+  }
+}

@@ -183,6 +183,23 @@ There is a public `/mcp` landing page on guestway.io with copy-paste connect
 steps for Claude / Cursor / ChatGPT, linked from the footer next to the
 "Compare us in..." strip.
 
+### Install channels
+
+Two complementary ways to make this installable by Claude users; see
+`docs/connector-directory-submission.md` for the full picture.
+
+- **Anthropic Connectors Directory** (claude.ai / Desktop / mobile, one-click):
+  submit the server URL via the directory portal/form. No manifest in this
+  repo; tools must carry `readOnlyHint` annotations (they do).
+- **Claude Code plugin marketplace** (terminal + IDE): this repo doubles as a
+  marketplace (`.claude-plugin/marketplace.json`) shipping the `guestway-docs`
+  plugin, which references the remote server over HTTP. Self-hosted, no review:
+
+  ```
+  /plugin marketplace add guestway-io/cloudflare-customer-website-mcp
+  /plugin install guestway-docs@guestway
+  ```
+
 ### Not shipped (planned)
 
 - `get_demo_availability` + `prepare_demo_booking` (HubSpot Scheduler API read
