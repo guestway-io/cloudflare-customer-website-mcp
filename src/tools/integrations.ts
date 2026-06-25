@@ -33,6 +33,7 @@ export function registerIntegrationTools(server: McpServer, env: Env): void {
     'search_integrations',
     {
       title: 'Search Guestway integrations',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Search or filter the 57 systems Guestway connects to, across PMS, ' +
         'OTA/channel, guest communication, smart climate and smart locks. ' +
@@ -107,6 +108,7 @@ export function registerIntegrationTools(server: McpServer, env: Env): void {
     'get_integration',
     {
       title: 'Get one integration',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Fetch a single integration by its slug (e.g. "booking-com", ' +
         '"mews", "nest"), returning category, status, description, and ' +

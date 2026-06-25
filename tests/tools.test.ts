@@ -30,6 +30,18 @@ describe('tools', () => {
     await close();
   });
 
+  it('annotates every tool as read-only (Connectors Directory requirement)', async () => {
+    const { client, close } = await connectClient();
+    const { tools } = await client.listTools();
+    for (const tool of tools) {
+      expect(tool.annotations?.readOnlyHint, `${tool.name} readOnlyHint`).toBe(
+        true,
+      );
+      expect(tool.annotations?.destructiveHint ?? false).toBe(false);
+    }
+    await close();
+  });
+
   it('search_docs finds Nest thermostat setup (slug alias google-nest)', async () => {
     const { client, close } = await connectClient();
     const res = await client.callTool({

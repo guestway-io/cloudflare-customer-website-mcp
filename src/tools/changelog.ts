@@ -14,6 +14,7 @@ export function registerChangelogTool(server: McpServer): void {
     'get_changelog',
     {
       title: 'Recent Guestway product changelog',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Returns recent Guestway product releases from the public changelog ' +
         '(new features, improvements, bug fixes). Use for "what shipped ' +

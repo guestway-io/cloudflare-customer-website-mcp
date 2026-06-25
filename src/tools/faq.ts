@@ -51,6 +51,7 @@ export function registerFaqTools(server: McpServer, env: Env): void {
     'search_faq',
     {
       title: 'Search Guestway FAQs',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Full-text search across every Guestway FAQ (about 80 Q&As in 14 ' +
         'categories: general, pricing, demo-and-onboarding, integrations, and ' +
@@ -111,6 +112,7 @@ export function registerFaqTools(server: McpServer, env: Env): void {
     'find_related_faqs',
     {
       title: 'Find FAQs shown on a page',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Return every FAQ that the marketing site surfaces on a given page, ' +
         'by the page slug. Useful to mirror exactly what a human sees in the ' +

@@ -26,6 +26,7 @@ export function registerCompanyTool(server: McpServer, env: Env): void {
     'get_company_info',
     {
       title: 'Get Guestway company info',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Return Guestway company facts: legal name, registered address, ' +
         'support and sales contact emails, the mobile apps (iOS and Android, ' +

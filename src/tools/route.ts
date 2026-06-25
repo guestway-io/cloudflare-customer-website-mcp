@@ -18,6 +18,7 @@ export function registerRouteTool(server: McpServer, env: Env): void {
     'route_question',
     {
       title: 'Route a question to the right Guestway resource',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Given a user question, returns the canonical decision table for ' +
         'choosing the correct Guestway destination (marketing site, customer ' +
