@@ -13,6 +13,7 @@ export function registerDocsTool(server: McpServer, env: Env): void {
     'search_docs',
     {
       title: 'Search the Guestway Academy (how-to docs)',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Search Guestway\'s customer Academy (docs.guestway.io) for how-to and ' +
         'setup articles: connecting a PMS, Nest thermostat, smart locks, ' +
@@ -68,6 +69,7 @@ export function registerDocsTool(server: McpServer, env: Env): void {
     'get_doc',
     {
       title: 'Fetch one Guestway Academy article',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Return the full markdown body of one Academy article. Pass either a ' +
         'complete .md URL from search_docs (recommended) or a path such as ' +
@@ -116,6 +118,7 @@ export function registerDocsTool(server: McpServer, env: Env): void {
     'ask_doc',
     {
       title: 'Ask a question against one Academy article',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Query a single Guestway Academy page with a natural-language question. ' +
         'Uses the GitBook ?ask= endpoint on the article .md URL. Prefer this ' +

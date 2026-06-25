@@ -8,6 +8,7 @@ export function registerTestimonialTool(server: McpServer, env: Env): void {
     'get_testimonials',
     {
       title: 'Get customer testimonials',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Return Guestway customer testimonials (the quotes shown on the ' +
         'homepage), each with the author, company, market segment and full ' +

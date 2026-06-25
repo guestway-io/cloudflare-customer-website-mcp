@@ -9,6 +9,7 @@ export function registerSolutionTools(server: McpServer, env: Env): void {
     'search_solutions',
     {
       title: 'Search Guestway product modules',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'List or search Guestway\'s 9 product modules (the "solutions"). ' +
         'Modules split into two categories: guest-journey (AI Inbox, Guest ' +
@@ -62,6 +63,7 @@ export function registerSolutionTools(server: McpServer, env: Env): void {
     'get_solution',
     {
       title: 'Get a product module',
+      annotations: { readOnlyHint: true, openWorldHint: true },
       description:
         'Fetch one Guestway product module by slug, with its description, ' +
         'canonical URL, SEO summary, and the FAQs the site shows on that ' +

@@ -12,8 +12,7 @@ export function buildCapabilities(origin: string) {
     name: 'Guestway Docs',
     description:
       'Public, read-only documentation MCP for guestway.io and docs.guestway.io. ' +
-      'Not a customer-account MCP: no login and no access to your portfolio. ' +
-      'Includes a browser-handoff demo-booking flow.',
+      'Not a customer-account MCP: no login and no access to your portfolio.',
     provider: {
       name: 'Guestway BV',
       url: 'https://guestway.io',
